@@ -37,7 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 # Semantic Commit Message (`"good practices"`)
-___
 [!TIP]
 ```
 feat: add hat wobble
@@ -68,4 +67,4 @@ feat: add hat wobble
 ```* test: (Adding missing tests or correcting existing tests)```
 
 ## Good Luck! :+1:
-![image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fcoding-programming-programmer-QX6ruFElzFdeIfblrg&psig=AOvVaw22UGgCatjahbZY0GE0e91Y&ust=1746627345992000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNjGy4qEj40DFQAAAAAdAAAAABAk)
+![image](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3JlNzMzMmhicTJiOXpiaHlsY2hvYmhqNmx1NTgyZTlnMWR5ZGQ1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QX6ruFElzFdeIfblrg/giphy.gif)
