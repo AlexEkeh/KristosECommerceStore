@@ -74,6 +74,6 @@ feat: add hat wobble
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=git,github,react,angular,next,node,python,vim,emac" />
+    <img src="https://skillicons.dev/icons?i=git,github,react,angular,next,nodejs,python,vim" />
   </a>
 </p>
