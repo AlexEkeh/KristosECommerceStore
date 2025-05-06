@@ -47,16 +47,15 @@ feat: add hat wobble
 +-------> Type: chore, docs, feat, fix, refactor, style, or test.
 ```
 ### Example
->`git commit -m "fix: fix checkout button"`
+>```git commit -m "fix: fix checkout button"``` [!Good]
 
->`git commit -m "fixed button"`[!Warning]
+>```git commit -m "fixed button"```[!Bad]
 
->`git commit -m "feat: create product card component"`
+>```git commit -m "feat: create product card component"``` [!Good]
 
->`git commit -m "create card"` [!note]
+> ```git commit -m "create card"```[!Bad]
 
 > Headers Example
-```
 * build: (update dependency)
 * feat: (new feature for the user, not a new feature for build script)`
 * fix: (bugfix for the user, not a fix to a build script)`
@@ -72,3 +71,9 @@ feat: add hat wobble
 
 ## Good Luck! :+1:
 ![image](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3JlNzMzMmhicTJiOXpiaHlsY2hvYmhqNmx1NTgyZTlnMWR5ZGQ1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QX6ruFElzFdeIfblrg/giphy.gif)
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=git,github,react,angular,next,node,python,vim,emac" />
+  </a>
+</p>
