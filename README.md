@@ -65,7 +65,7 @@ feat: add hat wobble
 `* chore: (updating grunt tasks etc; no production code change)`
 `* perf: (A code change that improves performance)`
 `* revert: (Revert something)`
-`* test: (Adding missing tests or correcting existing tests)`
+```* test: (Adding missing tests or correcting existing tests)```
 
 ## Good Luck! :+1:
 ![image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fcoding-programming-programmer-QX6ruFElzFdeIfblrg&psig=AOvVaw22UGgCatjahbZY0GE0e91Y&ust=1746627345992000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNjGy4qEj40DFQAAAAAdAAAAABAk)
