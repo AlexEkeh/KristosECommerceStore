@@ -67,9 +67,9 @@ feat: add hat wobble
 * perf: (A code change that improves performance)`
 * revert: (Revert something)`
 * test: (Adding missing tests or correcting existing tests)
-```
 
-## Good Luck! :+1:
+
+## Good Luck!
 ![image](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3JlNzMzMmhicTJiOXpiaHlsY2hvYmhqNmx1NTgyZTlnMWR5ZGQ1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QX6ruFElzFdeIfblrg/giphy.gif)
 
 <p align="center">
