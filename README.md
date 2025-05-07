@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 # Semantic Commit Message (`"good practices"`)
-[!TIP]
+[!TIPS]
 ```
 feat: add hat wobble
 ^--^  ^------------^
