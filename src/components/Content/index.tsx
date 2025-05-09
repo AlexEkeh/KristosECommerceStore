@@ -4,6 +4,7 @@ import Section1 from "../Section1";
 import Section2 from "../Section2";
 import { SectionContainer, ItemContainer } from "./style";
 import Box from "@mui/material/Box";
+import BriefSection from "@/section/BriefSection";
 
 const Section = () => {
   return (
@@ -44,7 +45,7 @@ const Section = () => {
             height: "300px",
           }}
         >
-          kristos electronics
+          <BriefSection />
         </ItemContainer>
         <ItemContainer
           sx={{

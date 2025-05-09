@@ -13,14 +13,14 @@ export const CoreValueCardContainer = styled(Box)`
 
 // This is the wrapper for the Core Value Card content
 interface CoreValueCardContentProps {
-  backgroundImage: string;
+  bgimage: string;
 }
 
 export const CoreValueCardContent = styled(Box)<CoreValueCardContentProps>`
   width: 413px;
   height: 462px;
   border-radius: 8px;
-  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`};
+  background-image: ${({ bgimage }) => `url(${bgimage})`};
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;

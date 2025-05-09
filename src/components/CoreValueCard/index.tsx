@@ -9,17 +9,17 @@ import {
 interface CoreValueCardProps {
   title: string;
   description: string;
-  bgImage: string;
+  bgimage: string;
 }
 
 export const CoreValueCard = ({
   title,
   description,
-  bgImage,
+  bgimage,
 }: CoreValueCardProps) => {
   return (
     <CoreValueCardContainer>
-      <CoreValueCardContent backgroundImage={`${bgImage}`}>
+      <CoreValueCardContent bgimage={`${bgimage}`}>
         <CoreValueCardTitle>{title}</CoreValueCardTitle>
         <CoreValueCardDescription>{description}</CoreValueCardDescription>
       </CoreValueCardContent>
