@@ -10,10 +10,8 @@ const Section = () => {
     <Box
       sx={{
         width: "100%",
-        minHeight: "100vh",
         height: "fit-content",
         overflow: "hidden",
-        boxSizing: "border-box",
       }}
     >
       <SectionContainer>
@@ -42,12 +40,19 @@ const Section = () => {
         <ItemContainer
           sx={{
             background: "#ffffff",
+            border: "1px solid #000000",
+            height: "300px",
           }}
         >
-          4
+          kristos electronics
         </ItemContainer>
-        <CoreValueSection />
-        <ItemContainer sx={{ background: "#393939" }}>5</ItemContainer>
+        <ItemContainer
+          sx={{
+            background: "#ffffff",
+          }}
+        >
+          <CoreValueSection />
+        </ItemContainer>
       </SectionContainer>
     </Box>
   );
