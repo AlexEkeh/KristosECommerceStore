@@ -41,8 +41,6 @@ const Section = () => {
         <ItemContainer
           sx={{
             background: "#ffffff",
-            border: "1px solid #000000",
-            height: "300px",
           }}
         >
           <BriefSection />
