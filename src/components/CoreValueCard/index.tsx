@@ -4,6 +4,7 @@ import {
   CoreValueCardContent,
   CoreValueCardDescription,
   CoreValueCardTitle,
+  CoreValueCardContentWrapper,
 } from "./style";
 
 interface CoreValueCardProps {
@@ -19,10 +20,12 @@ export const CoreValueCard = ({
 }: CoreValueCardProps) => {
   return (
     <CoreValueCardContainer>
-      <CoreValueCardContent bgimage={`${bgimage}`}>
-        <CoreValueCardTitle>{title}</CoreValueCardTitle>
-        <CoreValueCardDescription>{description}</CoreValueCardDescription>
-      </CoreValueCardContent>
+      <CoreValueCardContentWrapper bgimage={`${bgimage}`}>
+        <CoreValueCardContent>
+          <CoreValueCardTitle>{title}</CoreValueCardTitle>
+          <CoreValueCardDescription>{description}</CoreValueCardDescription>
+        </CoreValueCardContent>
+      </CoreValueCardContentWrapper>
     </CoreValueCardContainer>
   );
 };

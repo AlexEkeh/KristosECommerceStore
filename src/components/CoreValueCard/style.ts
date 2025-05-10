@@ -16,13 +16,27 @@ interface CoreValueCardContentProps {
   bgimage: string;
 }
 
-export const CoreValueCardContent = styled(Box)<CoreValueCardContentProps>`
-  width: 413px;
-  height: 462px;
+export const CoreValueCardContentWrapper = styled(
+  Box
+)<CoreValueCardContentProps>`
+  width: 100%;
+  height: 100%;
+  display: flex;
   border-radius: 8px;
   background-image: ${({ bgimage }) => `url(${bgimage})`};
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+`;
+
+export const CoreValueCardContent = styled(Box)`
+  width: 413px;
+  height: 462px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 50%,
+    rgb(7, 7, 7) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -43,7 +57,6 @@ export const CoreValueCardTitle = styled(Typography)`
   width: 100%;
   max-width: 200px;
   height: fit-content;
-  backdrop-filter: blur(4px);
 `;
 export const CoreValueCardDescription = styled(Typography)`
   font-family: Inter;
@@ -56,5 +69,4 @@ export const CoreValueCardDescription = styled(Typography)`
   max-width: 223px;
   height: fit-content;
   position: relative;
-  backdrop-filter: blur(4px);
 `;
