@@ -35,7 +35,7 @@ const Section2 = () => {
         <TopContent>
           {ProductCategories.map((product) => (
             <TopContentItem key={product.id}>
-              <Product>
+              <Product p={2} width={"197px"} height={"211px"} gap={1}>
                 <Box
                   sx={{
                     display: "flex",
@@ -51,10 +51,11 @@ const Section2 = () => {
                 <Box
                   sx={{
                     display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
-                    height: "85%",
-                    // border: "1px solid red"
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: "211px",
+                    width: "197px",
+                    // border: "1px solid red",
                   }}
                 >
                   <Image
