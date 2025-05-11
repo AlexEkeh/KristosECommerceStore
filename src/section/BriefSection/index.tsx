@@ -32,7 +32,7 @@ const BriefSection = () => {
             electronic needs.
           </BriefSectionContentDescription>
           <BriefSectionContentButtonContainer>
-            <ContactUsButton>
+            <ContactUsButton href="/">
               <span>Contact Us</span>
             </ContactUsButton>
           </BriefSectionContentButtonContainer>
