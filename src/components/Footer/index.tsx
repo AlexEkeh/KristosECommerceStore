@@ -62,9 +62,7 @@ const Footer = () => {
                 <FacebookIcon fontSize="medium" />
               </FooterSocialMediaIcon>
               <FooterSocialMediaIcon
-                onClick={(_target) =>
-                  (window.location.href = "https://www.x.com")
-                }
+                onClick={() => (window.location.href = "https://www.x.com")}
                 aria-label="x icon"
               >
                 <XIcon fontSize="small" />
