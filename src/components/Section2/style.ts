@@ -39,9 +39,10 @@ const TopContent = styled(Box)`
   grid-template-rows: 1fr;
   /* place-items: center; */
   align-items: center;
-  gap: 2%;
+  gap: 1.5%;
   height: 100%;
-  border: 2px solid blue;
+  overflow-x: auto;
+  // border: 2px solid blue;
 `;
 
 const TopContentItem = styled(Box)`
@@ -53,6 +54,7 @@ const TopContentItem = styled(Box)`
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
+  cursor: pointer;
   /* border: 1px solid red; */
 `;
 

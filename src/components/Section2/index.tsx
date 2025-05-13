@@ -15,10 +15,8 @@ import {
 } from "./style";
 import Image from "next/image";
 import { ProductCategories } from "./items";
-import { basePath } from "@/utilities/basePath";
 
 const Section2 = () => {
-
   return (
     <Section2Container>
       <Top>
@@ -38,8 +36,8 @@ const Section2 = () => {
         </TopHeader>
         <TopContent>
           {ProductCategories.map((product) => (
-            <TopContentItem key={product.id} >
-              <Product p={2} width={"197px"} height={"211px"} gap={1} >
+            <TopContentItem key={product.id}>
+              <Product p={2} width={"197px"} height={"211px"} gap={1}>
                 <Box
                   sx={{
                     display: "flex",
