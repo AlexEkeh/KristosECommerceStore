@@ -18,12 +18,12 @@ const SearchWrapper = styled("div")(({ theme }) => ({
     borderRadius: "16px",
     backgroundColor: "#F2F2F2",
     [theme.breakpoints.between("xs", "md")]: {
-      // 0 - 900px
+      // 0 - 900px //
       width: "50%",
       height: "auto",
     },
     [theme.breakpoints.between("md", "lg")]: {
-      // 900px - 1200px
+      // 900px - 1200px //
       width: "40%",
       height: "auto",
     },
