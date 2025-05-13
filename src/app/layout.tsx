@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import Main from "@/components/Main";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Inter } from "next/font/google"; //Olumide: I import the Inter Font
 
 //Olumide: I declare a geistInter Variable
@@ -38,13 +35,7 @@ export default function RootLayout({
     <html lang="en" className={geistInter.className}>
       {/*Olumide: i adde the inter font*/}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AppRouterCacheProvider>
-          <Main>
-            <Header />
-            {children}
-            <Footer />
-          </Main>
-        </AppRouterCacheProvider>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
     </html>
   );

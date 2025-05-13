@@ -15,8 +15,10 @@ import {
 } from "./style";
 import Image from "next/image";
 import { ProductCategories } from "./items";
+import { basePath } from "@/utilities/basePath";
 
 const Section2 = () => {
+
   return (
     <Section2Container>
       <Top>
@@ -45,7 +47,6 @@ const Section2 = () => {
                     justifyContent: "center",
                     height: "15%",
                     width: "max-content",
-                    // border: "1px solid red"
                   }}
                 >
                   <ItemName>{product.name}</ItemName>
@@ -57,11 +58,10 @@ const Section2 = () => {
                     justifyContent: "center",
                     height: "211px",
                     width: "197px",
-                    // border: "1px solid red",
                   }}
                 >
                   <Image
-                    src={product.img}
+                    src={`${basePath}/${product.img}`}
                     style={{ objectFit: "contain" }}
                     width={product.width}
                     height={product.height}

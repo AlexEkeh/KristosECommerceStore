@@ -12,13 +12,15 @@ import {
 } from "./style";
 import Image from "next/image";
 import CartIcon from "@/Icons/CartIcon";
+import { basePath } from "@/utilities/basePath";
+
 
 const Section1 = () => {
   return (
     <Section1Container container flexWrap="wrap">
       <Left item xs={12} sm={6} zeroMinWidth>
         <Image
-          src="/HeroSectionImage.svg"
+          src={`HeroSectionImage.svg`}
           width={731}
           height={549}
           alt="Kristos Electronics"

@@ -15,9 +15,7 @@ const Header = () => {
           <BrandLogo />
           <Search />
         </Left>
-        <Right>
-          
-        </Right>
+        <Right></Right>
       </Toolbar>
     </HeadContainer>
   );
