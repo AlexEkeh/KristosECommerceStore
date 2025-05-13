@@ -7,7 +7,7 @@ import {
   TitleHead,
 } from "./style";
 import { CoreValueCard } from "@/components/CoreValueCard";
-import { basePath } from "@/utilities/basePath";
+// import { basePath } from "@/utilities/basePath";
 
 const CoreValueSection = () => {
   return (
