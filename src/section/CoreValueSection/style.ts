@@ -45,7 +45,7 @@ export const CoreValueSectionContentBox = styled(Box)`
 
 export const CoreValueSectionContentWrapper = styled(Box)`
   width: 100%;
-  max-width: fit-content;
+  max-width: 100%;
   height: 100%;
   min-height: 300px;
   display: flex;

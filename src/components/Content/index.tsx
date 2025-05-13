@@ -6,6 +6,7 @@ import { SectionContainer, ItemContainer } from "./style";
 import Box from "@mui/material/Box";
 import BriefSection from "@/section/BriefSection";
 import ContactSection from "@/section/ContactSection";
+import { basePath } from "@/utilities/basePath";
 
 const Section = () => {
   return (
@@ -19,7 +20,7 @@ const Section = () => {
       <SectionContainer>
         <ItemContainer
           sx={{
-            backgroundImage: "url('HeroBG.png')",
+            backgroundImage: `url("${basePath}/HeroBG.png")`, 
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -34,7 +35,7 @@ const Section = () => {
 
         <ItemContainer
           sx={{
-            backgroundImage: "url('SampleElectronicsBG.png')",
+            backgroundImage: `url("${basePath}/SampleElectronicsBG.png")`,
             backgroundPosition: "center",
           }}
         ></ItemContainer>

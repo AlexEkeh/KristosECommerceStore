@@ -1,4 +1,3 @@
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import Main from "@/components/Main";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,17 +15,10 @@ export default function HomeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistInter.className}>
-      {/*Olumide: i adde the inter font*/}
-      <body>
-        <AppRouterCacheProvider>
-          <Main>
-            <Header />
-            {children}
-            <Footer />
-          </Main>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
+    <Main>
+      <Header />
+      {children}
+      <Footer />
+    </Main>
   );
 }
