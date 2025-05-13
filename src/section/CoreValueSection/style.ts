@@ -10,7 +10,8 @@ export const CoreValueSectionContainer = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 4% 5%;
+  padding: 4% 5% 0;
+  // border: 10px solid #e0e0e0;
 `;
 
 export const CoreValueSectionTitleWrapper = styled(Box)`
@@ -31,15 +32,25 @@ export const TitleHead = styled(Typography)`
   color: #000000;
 `;
 
-export const CoreValueSectionContentWrapper = styled(Box)`
+export const CoreValueSectionContentBox = styled(Box)`
   width: 100%;
   height: 100%;
+  min-height: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0 5%;
+  border-bottom: 1px solid #ddd8d8;
+`;
+
+export const CoreValueSectionContentWrapper = styled(Box)`
+  width: 100%;
   max-width: fit-content;
+  height: 100%;
   min-height: 300px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px 0;
   overflow: hidden;
   gap: 20px;
 `;
