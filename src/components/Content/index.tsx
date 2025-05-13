@@ -1,12 +1,21 @@
 "use client";
+import CoreValueSection from "@/section/CoreValueSection";
 import Section1 from "../Section1";
 import Section2 from "../Section2";
 import { SectionContainer, ItemContainer } from "./style";
 import Box from "@mui/material/Box";
+import BriefSection from "@/section/BriefSection";
+import ContactSection from "@/section/ContactSection";
 
 const Section = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        width: "100%",
+        height: "fit-content",
+        overflow: "hidden",
+      }}
+    >
       <SectionContainer>
         <ItemContainer
           sx={{
@@ -35,11 +44,18 @@ const Section = () => {
             background: "#ffffff",
           }}
         >
-          4
+          <BriefSection />
         </ItemContainer>
-
-        <ItemContainer sx={{ background: "#393939" }}>5</ItemContainer>
-        
+        <ItemContainer
+          sx={{
+            background: "#ffffff",
+          }}
+        >
+          <CoreValueSection />
+        </ItemContainer>
+        <ItemContainer>
+          <ContactSection />
+        </ItemContainer>
       </SectionContainer>
     </Box>
   );
