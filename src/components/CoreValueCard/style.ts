@@ -20,6 +20,7 @@ export const CoreValueCardContentWrapper = styled(
   Box
 )<CoreValueCardContentProps>`
   width: 100%;
+  max-width: fit-content;
   height: 100%;
   display: flex;
   border-radius: 8px;
