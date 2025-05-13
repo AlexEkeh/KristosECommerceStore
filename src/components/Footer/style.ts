@@ -7,21 +7,26 @@ export const FooterContainer = styled(Box)`
   //   border: 1px solid blue;
   width: 100%;
   height: fit-content;
+  background: #393939;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 // Style for Footer Content Box
 export const FooterContentBox = styled(Box)`
-  //   border: 1px solid red;
+  // border: 1px solid red;
   width: 100%;
-  min-width: fit-content;
+  max-width: 1600px;
   height: 100%;
   min-height: 404px;
   background: #393939;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5% 10%;
-  gap: 20px;
+  padding: 0 5%;
+  gap: 2%;
 `;
 
 export const FooterContentLinkWrapper = styled(Box)`
@@ -172,15 +177,16 @@ export const FooterCopyrightBox = styled(Box)`
   background: #161616;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px 10%;
+  justify-content: center;
+  padding: 10px 0;
 `;
 
 export const FooterCopyrightText = styled(Typography)`
   display: flex;
   align-items: center;
-  justify-content: right;
-  width: fit-content;
+  justify-content: left;
+  width: 100%;
+  max-width: 1600px;
   height: fit-content;
   min-height: 17px;
   font-family: Inter;
@@ -190,4 +196,6 @@ export const FooterCopyrightText = styled(Typography)`
   letter-spacing: 0.2px;
   text-align: center;
   color: #ffffff;
+  // border: 1px solid red;
+  padding: 0 5%;
 `;
