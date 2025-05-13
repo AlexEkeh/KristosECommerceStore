@@ -48,6 +48,7 @@ export const ContactInputField = styled(Input)`
 
 export const ContactTextAreaField = styled(TextareaAutosize)`
   width: 100%;
+  max-width: 500px;
   min-height: 120px;
   outline: none;
   border: 1px solid #a2a6b0;
