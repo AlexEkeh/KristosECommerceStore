@@ -5,6 +5,7 @@ import Section2 from "../Section2";
 import { SectionContainer, ItemContainer } from "./style";
 import Box from "@mui/material/Box";
 import BriefSection from "@/section/BriefSection";
+import ContactSection from "@/section/ContactSection";
 
 const Section = () => {
   return (
@@ -51,6 +52,9 @@ const Section = () => {
           }}
         >
           <CoreValueSection />
+        </ItemContainer>
+        <ItemContainer>
+          <ContactSection />
         </ItemContainer>
       </SectionContainer>
     </Box>
