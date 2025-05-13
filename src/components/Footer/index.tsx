@@ -27,7 +27,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { basePath } from "@/utilities/basePath";
 
 const Footer = () => {
   return (
@@ -36,7 +35,7 @@ const Footer = () => {
         <FooterContentLinkWrapper>
           <FooterContentBox1>
             <FooterContentLogoBox>
-              <FoooterLogo src={`${basePath}/Logo.svg`} alt="Kristos Logo" />
+              <FoooterLogo src="Logo.svg" alt="Kristos Logo" />
             </FooterContentLogoBox>
 
             <FooterContentCallBox>
@@ -116,23 +115,19 @@ const Footer = () => {
 
         <FooterContentIconWrapper>
           <IconBox>
+            <PaymentIcon icon="VisaLogo.svg" height={"27px"} width={"90px"} />
             <PaymentIcon
-              icon={`${basePath}/VisaLogo.svg`}
-              height={"27px"}
-              width={"90px"}
-            />
-            <PaymentIcon
-              icon={`${basePath}/MasterCardLogo.svg`}
+              icon="MasterCardLogo.svg"
               height={"49px"}
               width={"85px !important"}
             />
             <PaymentIcon
-              icon={`${basePath}/CashDeliveryLogo.svg`}
+              icon="CashDeliveryLogo.svg"
               height={"47px"}
               width={"93px"}
             />
             <PaymentIcon
-              icon={`${basePath}/InstallmentLogo.svg`}
+              icon="InstallmentLogo.svg"
               height={"59px !important"}
               width={"84px"}
             />

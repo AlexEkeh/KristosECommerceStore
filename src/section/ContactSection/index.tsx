@@ -10,7 +10,7 @@ import {
   ContactImage,
 } from "./style";
 import { ContactForm } from "@/components/Forms/ContactForm";
-import { basePath } from "@/utilities/basePath";
+// import { basePath } from "@/utilities/basePath";
 
 const ContactSection = () => {
   return (
