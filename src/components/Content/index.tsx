@@ -15,12 +15,13 @@ const Section = () => {
         width: "100%",
         height: "fit-content",
         overflow: "hidden",
+        maxWidth: "1600px",
       }}
     >
       <SectionContainer>
         <ItemContainer
           sx={{
-            backgroundImage: `url("${basePath}/HeroBG.png")`, 
+            backgroundImage: `url(HeroBG.png)`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
