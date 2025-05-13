@@ -21,21 +21,21 @@ const CoreValueSection = () => {
             description={
               "Lorem ipsum dolor sit amet consectetur. At in elementum aliquet vel sagittis eu mattis. Non eu sed auctor"
             }
-            bgimage={"/Trailer.png"}
+            bgimage={"Trailer.png"}
           />
           <CoreValueCard
             title={"Quality Products"}
             description={
               "Lorem ipsum dolor sit amet consectetur. At in elementum aliquet vel sagittis eu mattis. Non eu sed auctor"
             }
-            bgimage={"/HomeAppliances.png"}
+            bgimage={"HomeAppliances.png"}
           />
           <CoreValueCard
             title={"Satisfaction Guaranteed"}
             description={
               "Lorem ipsum dolor sit amet consectetur. At in elementum aliquet vel sagittis eu mattis. Non eu sed auctor"
             }
-            bgimage={"/PeopleInStore.png"}
+            bgimage={"PeopleInStore.png"}
           />
         </CoreValueSectionContentWrapper>
       </CoreValueSectionContentBox>
