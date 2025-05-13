@@ -1,5 +1,8 @@
-import Section from "@/components/Content";
+"use client";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return <Section />;
-}
+const Default = () => {
+  redirect("/login");
+};
+
+export default Default;
