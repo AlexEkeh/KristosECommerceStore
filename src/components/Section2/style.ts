@@ -37,9 +37,11 @@ const TopContent = styled(Box)`
   width: calc(100% - 5rem);
   grid-template-columns: repeat(6, auto);
   grid-template-rows: 1fr;
-  place-items: center;
+  /* place-items: center; */
+  align-items: center;
+  gap: 2%;
   height: 100%;
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
 `;
 
 const TopContentItem = styled(Box)`

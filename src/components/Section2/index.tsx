@@ -38,8 +38,8 @@ const Section2 = () => {
         </TopHeader>
         <TopContent>
           {ProductCategories.map((product) => (
-            <TopContentItem key={product.id}>
-              <Product p={2} width={"197px"} height={"211px"} gap={1}>
+            <TopContentItem key={product.id} >
+              <Product p={2} width={"197px"} height={"211px"} gap={1} >
                 <Box
                   sx={{
                     display: "flex",
@@ -61,7 +61,7 @@ const Section2 = () => {
                   }}
                 >
                   <Image
-                    src={`${basePath}/${product.img}`}
+                    src={product.img}
                     style={{ objectFit: "contain" }}
                     width={product.width}
                     height={product.height}

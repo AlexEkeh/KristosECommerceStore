@@ -30,10 +30,7 @@ const ContactSection = () => {
         </ContactFormBox>
 
         <ContactImageBox>
-          <ContactImage
-            src={`${basePath}/ContactImage.svg`}
-            alt="contact image"
-          />
+          <ContactImage src="ContactImage.svg" alt="contact image" />
         </ContactImageBox>
       </ContactSectionContentWrapper>
     </ContactSectionContainer>

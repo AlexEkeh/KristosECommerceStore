@@ -20,6 +20,7 @@ export const CoreValueCardContentWrapper = styled(
   Box
 )<CoreValueCardContentProps>`
   width: 100%;
+  max-width: 100%;
   height: 100%;
   display: flex;
   border-radius: 8px;
@@ -27,10 +28,11 @@ export const CoreValueCardContentWrapper = styled(
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  // border: 2px solid red;
 `;
 
 export const CoreValueCardContent = styled(Box)`
-  width: 413px;
+  width: 100%;
   height: 462px;
   background: linear-gradient(
     to bottom,
@@ -44,6 +46,7 @@ export const CoreValueCardContent = styled(Box)`
   gap: 2px;
   overflow: hidden;
   padding: 40px 30px;
+  
 `;
 
 export const CoreValueCardTitle = styled(Typography)`

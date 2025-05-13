@@ -12,7 +12,10 @@ import {
 
 export const ContactForm = () => {
   return (
-    <ContactFormContainer id="contact-form">
+    <ContactFormContainer
+      id="contact-form"
+      onSubmit={(e) => e.preventDefault()}
+    >
       <ContactInputWrapper>
         <ContactInputLabel htmlFor="user-name">
           Your Name <span>*</span>
