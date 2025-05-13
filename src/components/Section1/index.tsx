@@ -18,7 +18,7 @@ const Section1 = () => {
     <Section1Container container flexWrap="wrap">
       <Left item xs={12} sm={6} zeroMinWidth>
         <Image
-          src="/HeroSectionImage.svg"
+          src="HeroSectionImage.svg"
           width={731}
           height={549}
           alt="Kristos Electronics"
