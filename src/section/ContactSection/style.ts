@@ -60,6 +60,9 @@ export const ContactSectionContentWrapper = styled(Box)`
   overflow: hidden;
   gap: 20px;
   //   border: 1px solid blue;
+  @media (max-width: 872px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const ContactFormBox = styled(Box)`
@@ -68,6 +71,9 @@ export const ContactFormBox = styled(Box)`
   height: fit-content;
   min-height: 250px;
   //   border: 1px solid red;
+  @media (max-width: 872px) {
+    max-width: 100%;
+  }
 `;
 
 export const ContactImageBox = styled(Box)`
