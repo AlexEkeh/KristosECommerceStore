@@ -20,7 +20,7 @@ export const BriefSectionContentWrapper = styled(Box)`
   justify-content: flex-end;
   align-items: center;
   //   backdrop-filter: blur(2px);
-  background: #00b51766;
+  background: rgba(0, 181, 24, 0.08);
   padding: 7% 10% 9% 10%;
   @media (max-width: 310px) {
     padding: 7% 4%;
