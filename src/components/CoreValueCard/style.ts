@@ -46,7 +46,40 @@ export const CoreValueCardContent = styled(Box)`
   gap: 2px;
   overflow: hidden;
   padding: 40px 30px;
-  
+  @media (max-width: 972px) {
+    height: 362px;
+    padding: 30px 20px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 30%,
+      rgb(7, 7, 7) 100%
+    );
+  }
+  @media (max-width: 872px) {
+    height: 260px;
+    padding: 30px 20px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(7, 7, 7) 100%
+    );
+  }
+  @media (max-width: 520px) {
+    height: 200px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(7, 7, 7) 100%
+    );
+  }
+  @media (max-width: 440px) {
+    height: 200px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(7, 7, 7) 100%
+    );
+  }
 `;
 
 export const CoreValueCardTitle = styled(Typography)`
