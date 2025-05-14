@@ -5,20 +5,25 @@ import Typography from "@mui/material/Typography";
 const Section2Container = styled(Box)`
   width: 100%;
   height: 100%;
-  //   border: 1px solid red;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr 3fr 1fr;
 `;
 
 const Top = styled(Box)`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr 3fr;
   width: 100%;
   height: 100%;
-  //   border: 2px solid green;
-  padding: 45px 0;
+  // border: 1px solid green;
+  padding: 45px 2%;
 `;
 
 const TopHeader = styled(Box)`
@@ -32,17 +37,18 @@ const TopHeader = styled(Box)`
 
 const TopContent = styled(Box)`
   /* width: 100%; */
-  display: grid;
-  margin: 0 auto;
-  width: calc(100% - 5rem);
-  grid-template-columns: repeat(6, auto);
-  grid-template-rows: 1fr;
+  display: flex;
+  width: 100%;
+  // margin: 0 auto;
+  // width: calc(100% - 5rem);
+  // grid-template-columns: repeat(6, auto);
+  // grid-template-rows: 1fr;
   /* place-items: center; */
   align-items: center;
   gap: 1.5%;
   height: 100%;
-  overflow-x: auto;
   // border: 2px solid blue;
+  padding: 45px 3% 0;
 `;
 
 const TopContentItem = styled(Box)`
@@ -55,7 +61,9 @@ const TopContentItem = styled(Box)`
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
-  /* border: 1px solid red; */
+  // border: 1px solid red;
+  width: 100%;
+  min-width: fit-content;
 `;
 
 const ItemName = styled(Typography)`
@@ -71,12 +79,14 @@ const ItemName = styled(Typography)`
 
 const Product = styled(Box)`
   width: 100%;
+  max-width: 197px !important;
   height: 100%;
+  max-height: 211px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 1px solid blue; */
+  // border: 1px solid blue;
 `;
 
 const Center = styled(Box)`
