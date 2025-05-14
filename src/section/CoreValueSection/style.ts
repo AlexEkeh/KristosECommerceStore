@@ -53,4 +53,10 @@ export const CoreValueSectionContentWrapper = styled(Box)`
   align-items: center;
   overflow: hidden;
   gap: 20px;
+  @media (max-width: 872px) {
+    gap: 10px;
+  }
+  @media (max-width: 520px) {
+    flex-wrap: wrap;
+  }
 `;
