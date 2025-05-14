@@ -10,3 +10,52 @@ body {
   margin: 0;
   scroll-behavior: smooth;
 }
+
+/* Swiper */
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(241, 212, 159) !important;
+}
+.swiper-button-next {
+  display: none !important;
+}
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper:hover .swiper-button-next {
+  display: flex !important;
+}
+.swiper:hover .swiper-button-prev {
+  display: flex !important;
+}
+
+@media (min-width: 1380px) {
+  .swiper:hover .swiper-button-next {
+    display: none !important;
+  }
+  .swiper:hover .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 22px !important;
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+  /* border: 1px solid blue; */
+  color: white;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: rgba(58, 58, 58, 0.196);
+}
