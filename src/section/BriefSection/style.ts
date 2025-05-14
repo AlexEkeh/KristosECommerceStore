@@ -22,6 +22,9 @@ export const BriefSectionContentWrapper = styled(Box)`
   //   backdrop-filter: blur(2px);
   background: #00b51766;
   padding: 7% 10% 9% 10%;
+  @media (max-width: 310px) {
+    padding: 7% 4%;
+  }
 `;
 
 export const BriefSectionContentContainer = styled(Box)`
@@ -37,6 +40,9 @@ export const BriefSectionContentContainer = styled(Box)`
   backdrop-filter: blur(26px);
   padding: 50px 60px;
   gap: 12px;
+  @media (max-width: 440px) {
+    padding: 30px 30px;
+  }
 `;
 
 export const BriefSectionContentTitle = styled(Typography)`
