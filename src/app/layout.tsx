@@ -38,13 +38,7 @@ export default function RootLayout({
     <html lang="en" className={geistInter.className}>
       {/*Olumide: i adde the inter font*/}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AppRouterCacheProvider>
-          <Main>
-            <Header />
-            {children}
-            <Footer />
-          </Main>
-        </AppRouterCacheProvider>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
     </html>
   );
