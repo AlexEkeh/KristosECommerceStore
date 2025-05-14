@@ -25,8 +25,11 @@ export const FooterContentBox = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 5%;
+  padding: 5%;
   gap: 2%;
+  @media (max-width: 872px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const FooterContentLinkWrapper = styled(Box)`
@@ -40,6 +43,9 @@ export const FooterContentLinkWrapper = styled(Box)`
   justify-content: center;
   gap: 15%;
   overflow: hidden;
+  @media (max-width: 440px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const FooterContentBox1 = styled(Box)`
@@ -154,6 +160,12 @@ export const FooterContentIconWrapper = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 872px) {
+    min-width: 100%;
+  }
+  @media (max-width: 440px) {
+    padding: 10px 0 !important;
+  }
 `;
 
 export const IconBox = styled(Box)`
@@ -166,6 +178,9 @@ export const IconBox = styled(Box)`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  @media (max-width: 440px) {
+    gap: 5px;
+  }
 `;
 
 // Style for Footer Copyright Box
