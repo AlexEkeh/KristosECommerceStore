@@ -65,6 +65,9 @@ export const ContactTextAreaField = styled(TextareaAutosize)`
     font-weight: 300;
     font-size: 14px;
   }
+  @media (max-width: 872px) {
+    max-width: 100%;
+  }
 `;
 
 export const ContactButtonWrapper = styled(Box)`
