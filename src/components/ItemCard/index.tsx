@@ -62,9 +62,9 @@ export const ItemCard = ({
             value={like}
             onClick={onLikeClick}
             checked={checked}
-            icon={<FavoriteBorderOutlinedIcon fontSize="small" />}
+            icon={<FavoriteBorderOutlinedIcon fontSize="inherit" />}
             checkedIcon={
-              <FavoriteOutlinedIcon color="error" fontSize="small" />
+              <FavoriteOutlinedIcon color="error" fontSize="inherit" />
             }
           />
         </ItemCardItemLikeBox>
