@@ -7,8 +7,6 @@ import {
   LatestDealSectionTitleWrapper,
   TitleHead,
 } from "./style";
-import { ItemCard } from "@/components/ItemCard";
-import { Item, ItemType } from "./items";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -16,6 +14,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import { Item, ItemType } from "@/db/items";
+import { ItemCard } from "@/components/ItemCard";
 
 interface GetItemsFromDBCallback {
   (items: ItemType[]): void;
