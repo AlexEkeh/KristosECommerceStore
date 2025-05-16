@@ -45,6 +45,9 @@ export const ItemCardItemLikeBox = styled(Box)`
   align-items: center;
   justify-content: flex-end;
   padding: 0 5px;
+  & .status {
+    display: none;
+  }
 `;
 
 export const LikeItem = styled(Checkbox)`

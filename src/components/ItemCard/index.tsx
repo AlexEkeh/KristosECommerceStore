@@ -57,7 +57,7 @@ export const ItemCard = ({
     <ItemCardContainer className="item-card-container">
       <ItemCardImageLikeWrapper>
         <ItemCardItemLikeBox>
-          {likeStatus}
+          <span className="status">{likeStatus}</span>
           <LikeItem
             value={like}
             onClick={onLikeClick}
