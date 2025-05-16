@@ -19,6 +19,11 @@ export const ItemCardContainer = styled(Box)`
     background: #f3f3f3;
     box-shadow: 2px 4px 15px 0px #9d969640;
   }
+  @media (max-width: 872px) {
+    max-width: 205px;
+    height: 300px;
+    gap: 2px;
+  }
 `;
 
 export const ItemCardImageLikeWrapper = styled(Box)`
@@ -32,14 +37,19 @@ export const ItemCardImageLikeWrapper = styled(Box)`
   align-items: center;
   justify-content: center;
   padding: 10px;
-  //   overflow: hidden;
+  overflow: hidden;
   gap: 10px;
+  @media (max-width: 872px) {
+    height: 231px;
+    gap: 8px;
+  }
 `;
 
 export const ItemCardItemLikeBox = styled(Box)`
   background: #f3f3f3;
   width: 100%;
   height: 100%;
+  font-size: large;
   //   border: 1px solid teal;
   display: flex;
   align-items: center;
@@ -47,6 +57,9 @@ export const ItemCardItemLikeBox = styled(Box)`
   padding: 0 5px;
   & .status {
     display: none;
+  }
+  @media (max-width: 872px) {
+    font-size: smaller;
   }
 `;
 
@@ -66,11 +79,20 @@ export const ItemCardItemImageBox = styled(Box)`
   min-height: 254px;
   //   border: 1px solid teal;
   background: rgb(226, 226, 226);
+  @media (max-width: 872px) {
+    width: fit-content;
+    min-height: 150px;
+  }
 `;
 
 export const ItemImage = styled("img")`
   width: 100%;
   height: 100%;
+  //   border: 1px solid red;
+  @media (max-width: 872px) {
+    width: 154px;
+    max-height: 150px;
+  }
 `;
 
 export const ItemCardDetailBox = styled(Box)`
@@ -80,6 +102,9 @@ export const ItemCardDetailBox = styled(Box)`
   display: flex;
   flex-direction: column;
   padding: 0 6px 4px;
+  @media (max-width: 872px) {
+    max-width: 220px;
+  }
 `;
 
 export const ItemNameAmountBox = styled(Box)`
@@ -103,6 +128,9 @@ export const ItemName = styled(Box)`
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
+  @media (max-width: 872px) {
+    font-size: 10px;
+  }
 `;
 export const ItemAmount = styled(Box)`
   width: 100%;
@@ -118,6 +146,9 @@ export const ItemAmount = styled(Box)`
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: right;
+  @media (max-width: 872px) {
+    font-size: 13px;
+  }
 `;
 
 export const ItemCategoryBox = styled(Box)`
@@ -133,6 +164,9 @@ export const ItemCategoryBox = styled(Box)`
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
+  @media (max-width: 872px) {
+    font-size: 10px;
+  }
 `;
 
 export const ItemRateBox = styled(Box)`
@@ -149,6 +183,9 @@ export const ItemRateBox = styled(Box)`
   white-space: nowrap;
   gap: 10px;
   //   border: 1px solid navy;
+  @media (max-width: 872px) {
+    font-size: 10px;
+  }
 `;
 
 export const AddToCartButtonBox = styled(Box)`
