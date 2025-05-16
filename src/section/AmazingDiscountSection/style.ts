@@ -11,8 +11,9 @@ export const AmazingDiscountSectionContainer = styled(Box)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 10px 5%;
-  border: 1px solid red;
+  padding: 10px 5% 2%;
+  //   border: 1px solid red;
+  gap: 20px;
 `;
 
 export const AmazingDiscountSectionTitleWrapper = styled(Box)`
