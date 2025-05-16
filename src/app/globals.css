@@ -28,11 +28,22 @@ $min-mobile-310px */
 .swiper-pagination-bullet-active {
   background-color: rgb(241, 212, 159) !important;
 }
-.swiper-button-next {
-  display: none !important;
-}
+
+.swiper-button-next,
 .swiper-button-prev {
-  display: none !important;
+  font-size: 14px !important;
+  font-weight: 700;
+  max-height: 40px;
+  width: 40px;
+  min-width: 40px;
+  /* border: 1px solid red; */
+  color: white;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: rgba(58, 58, 58, 0.196);
 }
 
 .swiper:hover .swiper-button-next {
@@ -51,20 +62,39 @@ $min-mobile-310px */
   }
 }
 
+@media (min-width: 1380px) {
+  .product-section:hover .swiper-button-next {
+    display: flex !important;
+  }
+  .product-section:hover .swiper-button-prev {
+    display: flex !important;
+  }
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 22px !important;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
+  font-size: 14px !important;
+  font-weight: 700;
+  height: 40px;
+  max-height: 40px;
+  width: 40px;
+  min-width: 40px;
   /* border: 1px solid blue; */
   color: white;
-  padding: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100%;
   background-color: rgba(58, 58, 58, 0.196);
+}
+
+.product-section .swiper-button-next:hover {
+  background-color: #05dc21;
+  /* border: 1px solid red; */
+}
+.product-section .swiper-button-prev:hover {
+  background-color: #05dc21;
+  /* border: 1px solid red; */
 }
 
 /* Item Card */
