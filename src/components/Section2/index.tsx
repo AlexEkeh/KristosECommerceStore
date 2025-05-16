@@ -116,8 +116,6 @@ const Section2 = () => {
           </Swiper>
         </TopContent>
       </Top>
-      <Center>B</Center>
-      <Bottom>C</Bottom>
     </Section2Container>
   );
 };
