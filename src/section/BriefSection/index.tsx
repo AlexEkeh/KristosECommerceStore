@@ -8,12 +8,13 @@ import {
   BriefSectionContentWrapper,
   ContactUsButton,
 } from "./style";
+import { basePath } from "@/utilities/basePath";
 
 const BriefSection = () => {
   return (
     <BriefSectionContainer
       sx={{
-        backgroundImage: "url(SampleElectronicsBG.png)",
+        backgroundImage: `url(${basePath}/SampleElectronicsBG.png)`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",

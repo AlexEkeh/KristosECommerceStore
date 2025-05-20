@@ -1,11 +1,33 @@
 "use client";
 
-import React from 'react'
+import { ItemContainer } from "@/components/Content/style";
+import { SectionContainer } from "@/components/Global/SectionContainer";
+import BriefSection from "@/section/BriefSection";
+import CoreValueSection from "@/section/CoreValueSection";
+import Box from "@mui/material/Box";
+import React from "react";
 
 const Cookers = () => {
   return (
-    <div>Cookers</div>
-  )
-}
+    <Box
+      sx={{
+        width: "100%",
+        height: "fit-content",
+        overflow: "hidden",
+        maxWidth: "1600px",
+      }}
+    >
+      <SectionContainer>
+        <ItemContainer>Cookers</ItemContainer>
+        <ItemContainer>
+          <BriefSection />
+        </ItemContainer>
+        <ItemContainer>
+          <CoreValueSection />
+        </ItemContainer>
+      </SectionContainer>
+    </Box>
+  );
+};
 
-export default Cookers
+export default Cookers;

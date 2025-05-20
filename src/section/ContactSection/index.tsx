@@ -10,7 +10,7 @@ import {
   ContactImage,
 } from "./style";
 import { ContactForm } from "@/components/Forms/ContactForm";
-// import { basePath } from "@/utilities/basePath";
+import { basePath } from "@/utilities/basePath";
 
 const ContactSection = () => {
   return (
@@ -30,7 +30,10 @@ const ContactSection = () => {
         </ContactFormBox>
 
         <ContactImageBox>
-          <ContactImage src="ContactImage.svg" alt="contact image" />
+          <ContactImage
+            src={`${basePath}/ContactImage.svg`}
+            alt="contact image"
+          />
         </ContactImageBox>
       </ContactSectionContentWrapper>
     </ContactSectionContainer>
