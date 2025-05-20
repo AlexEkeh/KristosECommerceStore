@@ -1,4 +1,5 @@
 "use client";
+import { ContentTop } from "@/components/Global/ContentTop";
 import { ItemContainer } from "@/components/Global/ItemContainer";
 import { SectionContainer } from "@/components/Global/SectionContainer";
 import BriefSection from "@/section/BriefSection";
@@ -17,7 +18,11 @@ const TV = () => {
       }}
     >
       <SectionContainer>
-        <ItemContainer>TV</ItemContainer>
+        <ItemContainer>
+          <Box sx={{ padding: "30px 0" }}>
+            <ContentTop category={"TV"} itemNo={211} />
+          </Box>
+        </ItemContainer>
         <ItemContainer>
           <BriefSection />
         </ItemContainer>
