@@ -9,8 +9,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import {
-  Bottom,
-  Center,
   Section2Container,
   Top,
   TopContent,
@@ -22,17 +20,6 @@ import {
 import Image from "next/image";
 import { ProductCategories } from "./items";
 import { p } from "framer-motion/client";
-
-// Settings for the slider
-const carouselSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-};
 
 const Section2 = () => {
   return (

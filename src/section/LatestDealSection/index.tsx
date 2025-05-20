@@ -7,8 +7,15 @@ import {
   LatestDealSectionTitleWrapper,
   TitleHead,
 } from "./style";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+import { Item, ItemType } from "@/db/items";
 import { ItemCard } from "@/components/ItemCard";
-import { Item, ItemType } from "./items";
 
 interface GetItemsFromDBCallback {
   (items: ItemType[]): void;
@@ -124,25 +131,58 @@ const LatestDealSection = () => {
         <TitleHead>Latest Deals Today</TitleHead>
       </LatestDealSectionTitleWrapper>
       <LatestDealSectionContentBox>
-        {products
-          .filter((product) => product.section === "latest deals")
-          .map((item) => (
-            <ItemCard
-              key={item.id}
-              imageSrc={item.img}
-              alt={item.slug}
-              onLikeClick={() => handleToggleLike(item.id)}
-              like={item.like}
-              likeStatus={item.like ? "liked" : "not liked"}
-              ratingValue={item.ratings / item.ratings_count}
-              ratingsCount={item.ratings_count}
-              ratingReadOnly={true}
-              itemName={item.name}
-              itemCategory={item.category}
-              itemAmount={item.amount}
-              checked={item.like}
-            />
-          ))}
+        <Swiper
+          className="product-section"
+          spaceBetween={12}
+          pagination={{ clickable: true }}
+          loop
+          modules={[Pagination, Navigation, Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          navigation
+          effect="fade"
+          breakpoints={{
+            1: { slidesPerView: 2, pagination: { type: "bullets" } },
+            500: { slidesPerView: 3, pagination: { type: "bullets" } },
+            700: { slidesPerView: 4, pagination: { type: "bullets" } },
+            920: { slidesPerView: 5, pagination: { type: "bullets" } },
+            1200: { slidesPerView: 5, pagination: { type: "bullets" } },
+            1380: {
+              slidesPerView: 5,
+              pagination: { type: "bullets" },
+            },
+          }}
+          style={{
+            padding: "0 0 30px 0",
+            display: "flex",
+            justifyContent: "flex-start",
+            width: "100%",
+          }}
+        >
+          {products
+            .filter((product) => product.section === "latest deals")
+            .map((item) => (
+              <SwiperSlide
+                key={item.id}
+                style={{ width: "100%", minWidth: "fit-content" }}
+              >
+                <ItemCard
+                  key={item.id}
+                  imageSrc={item.img}
+                  alt={item.slug}
+                  onLikeClick={() => handleToggleLike(item.id)}
+                  like={item.like}
+                  likeStatus={item.like ? "liked" : "not liked"}
+                  ratingValue={item.ratings / item.ratings_count}
+                  ratingsCount={item.ratings_count}
+                  ratingReadOnly={true}
+                  itemName={item.name}
+                  itemCategory={item.category}
+                  itemAmount={item.amount}
+                  checked={item.like}
+                />
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </LatestDealSectionContentBox>
     </LatestDealSectionContainer>
   );
