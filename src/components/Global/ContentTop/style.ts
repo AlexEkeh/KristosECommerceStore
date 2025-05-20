@@ -30,7 +30,6 @@ export const ContentTopTextBox = styled(Box)`
 
 export const ContentTopCategory = styled(Typography)`
   width: fit-content;
-  min-width: 160px;
   height: 40px;
   //   border: 1px solid red;
   display: flex;
@@ -46,7 +45,6 @@ export const ContentTopCategory = styled(Typography)`
 
 export const ContentTopItemSummary = styled(Typography)`
   width: fit-content;
-  min-width: 140px;
   height: 40px;
   //   border: 1px solid red;
   display: flex;
