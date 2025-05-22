@@ -159,6 +159,7 @@ const SpecialOfferSection = () => {
         >
           {products
             .filter((product) => product.section === "special offers")
+            .slice(0, 15)
             .map((item) => (
               <SwiperSlide
                 key={item.id}

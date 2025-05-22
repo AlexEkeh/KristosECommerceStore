@@ -160,6 +160,7 @@ const LatestDealSection = () => {
         >
           {products
             .filter((product) => product.section === "latest deals")
+            .slice(0, 15)
             .map((item) => (
               <SwiperSlide
                 key={item.id}
