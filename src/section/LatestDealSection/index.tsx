@@ -176,9 +176,10 @@ const LatestDealSection = () => {
                   ratingsCount={item.ratings_count}
                   ratingReadOnly={true}
                   itemName={item.name}
-                  itemCategory={item.category}
+                  itemDescription={item.description}
                   itemAmount={item.amount}
                   checked={item.like}
+                  isGridView
                 />
               </SwiperSlide>
             ))}
