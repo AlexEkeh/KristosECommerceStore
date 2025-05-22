@@ -4,6 +4,7 @@ import { ItemContainer } from "@/components/Global/ItemContainer";
 import { SectionContainer } from "@/components/Global/SectionContainer";
 import BriefSection from "@/section/BriefSection";
 import CoreValueSection from "@/section/CoreValueSection";
+import ProductCategorySection from "@/section/ProductCategorySection";
 import Box from "@mui/material/Box";
 import React from "react";
 
@@ -19,9 +20,7 @@ const TV = () => {
     >
       <SectionContainer>
         <ItemContainer>
-          <Box sx={{ padding: "30px 0" }}>
-            <ContentTop category={"TV"} itemNo={211} />
-          </Box>
+          <ProductCategorySection category={"tv"} />
         </ItemContainer>
         <ItemContainer>
           <BriefSection />

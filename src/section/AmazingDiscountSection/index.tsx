@@ -158,6 +158,7 @@ const AmazingDiscountSection = () => {
       >
         {products
           .filter((product) => product.section === "amazing discount")
+          .slice(0, 10)
           .map((item) => (
             <SwiperSlide
               key={item.id}
@@ -174,9 +175,10 @@ const AmazingDiscountSection = () => {
                 ratingsCount={item.ratings_count}
                 ratingReadOnly={true}
                 itemName={item.name}
-                itemCategory={item.category}
+                itemDescription={item.description}
                 itemAmount={item.amount}
                 checked={item.like}
+                isGridView
               />
             </SwiperSlide>
           ))}

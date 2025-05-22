@@ -1,26 +1,27 @@
-"use client";
 import React, { useEffect, useState } from "react";
-import {
-  SpecialOfferSectionContainer,
-  SpecialOfferSectionContentBox,
-  SpecialOfferSectionTitleWrapper,
-  TitleHead,
-} from "./style";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import { Item, ItemType } from "@/db/items";
+import { ProductSectionContainer, ProductsWrapper } from "./style";
+import { ContentTop } from "@/components/Global/ContentTop";
+import WindowIcon from "@mui/icons-material/Window";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import MenuIcon from "@mui/icons-material/Menu";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import { ItemType, Item } from "@/db/items";
 import { ItemCard } from "@/components/ItemCard";
+import { basePath } from "@/utilities/basePath";
 
 interface GetItemsFromDBCallback {
   (items: ItemType[]): void;
 }
 
-const SpecialOfferSection = () => {
+interface ProductCategorySectionProps {
+  category: string;
+}
+
+const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
+  const [isGridView, setIsGridView] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+  const [isGrid, setIsGrid] = useState(true);
+
   const [products, setProducts] = useState<ItemType[]>([]);
 
   // Move getItemsFromDB to component scope so it can be used in multiple places
@@ -124,68 +125,55 @@ const SpecialOfferSection = () => {
     }
   }, []); //##################
 
+  const handleViewClick = () => {
+    setIsGridView((prev) => !prev);
+    setIsGrid((prev) => !prev);
+  };
+
+  const filteredProducts = products.filter(
+    (product) => product.category === `${category}`
+  );
+
   return (
-    <SpecialOfferSectionContainer>
-      <SpecialOfferSectionTitleWrapper>
-        <TitleHead>Special Offers | Up to 50% OFF</TitleHead>
-      </SpecialOfferSectionTitleWrapper>
-      <SpecialOfferSectionContentBox>
-        <Swiper
-          className="product-section"
-          spaceBetween={12}
-          pagination={{ clickable: true }}
-          loop
-          modules={[Pagination, Navigation, Autoplay]}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          navigation
-          effect="fade"
-          breakpoints={{
-            1: { slidesPerView: 2, pagination: { type: "bullets" } },
-            500: { slidesPerView: 3, pagination: { type: "bullets" } },
-            700: { slidesPerView: 4, pagination: { type: "bullets" } },
-            920: { slidesPerView: 5, pagination: { type: "bullets" } },
-            1200: { slidesPerView: 5, pagination: { type: "bullets" } },
-            1380: {
-              slidesPerView: 5,
-              pagination: { type: "bullets" },
-            },
-          }}
-          style={{
-            padding: "0 0 30px 0",
-            display: "flex",
-            justifyContent: "flex-start",
-            width: "100%",
-          }}
-        >
-          {products
-            .filter((product) => product.section === "special offers")
-            .map((item) => (
-              <SwiperSlide
-                key={item.id}
-                style={{ width: "100%", minWidth: "fit-content" }}
-              >
-                <ItemCard
-                  key={item.id}
-                  imageSrc={item.img}
-                  alt={item.slug}
-                  onLikeClick={() => handleToggleLike(item.id)}
-                  like={item.like}
-                  likeStatus={item.like ? "liked" : "not liked"}
-                  ratingValue={item.ratings / item.ratings_count}
-                  ratingsCount={item.ratings_count}
-                  ratingReadOnly={true}
-                  itemName={item.name}
-                  itemDescription={item.description}
-                  itemAmount={item.amount}
-                  checked={item.like}
-                  isGridView
-                />
-              </SwiperSlide>
-            ))}
-        </Swiper>
-      </SpecialOfferSectionContentBox>
-    </SpecialOfferSectionContainer>
+    <ProductSectionContainer>
+      <ContentTop
+        category={category}
+        itemNo={filteredProducts.length}
+        viewIcon={isGridView ? <WindowIcon /> : <FormatListBulletedIcon />}
+        menuIcon={isOpen ? <MenuIcon /> : <MenuOpenIcon />}
+        onViewIconClick={handleViewClick}
+        onMenuIconClick={() => setIsOpen((prev) => !prev)}
+      />
+      <ProductsWrapper
+        sx={{
+          gridTemplateColumns: `${
+            isGrid ? "repeat(auto-fill, 20em)" : "repeat(1, 1fr) !important"
+          }`,
+        }}
+      >
+        {products
+          .filter((product) => product.category === `${category}`)
+          .map((item) => (
+            <ItemCard
+              key={item.id}
+              imageSrc={`${basePath}/${item.img}`}
+              alt={item.slug}
+              onLikeClick={() => handleToggleLike(item.id)}
+              like={item.like}
+              likeStatus={item.like ? "liked" : "not liked"}
+              ratingValue={item.ratings / item.ratings_count}
+              ratingsCount={item.ratings_count}
+              ratingReadOnly={true}
+              itemName={item.name}
+              itemDescription={item.description}
+              itemAmount={item.amount}
+              checked={item.like}
+              isGridView={isGrid}
+            />
+          ))}
+      </ProductsWrapper>
+    </ProductSectionContainer>
   );
 };
 
-export default SpecialOfferSection;
+export default ProductCategorySection;

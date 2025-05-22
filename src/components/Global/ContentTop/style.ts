@@ -4,6 +4,13 @@ import { Button, Typography } from "@mui/material";
 
 export const ContentTopContainer = styled(Box)`
   width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+`;
+
+export const ContentTopWrapper = styled(Box)`
+  width: 100%;
   height: 62px;
   min-height: fit-content;
   overflow: hidden;
@@ -42,6 +49,7 @@ export const ContentTopCategory = styled(Typography)`
   line-height: 100%;
   letter-spacing: 0px;
   padding: 0 0.5%;
+  text-transform: capitalize;
 `;
 
 export const ContentTopItemSummary = styled(Typography)`
@@ -66,7 +74,6 @@ export const ContentTopMenuViewBox = styled(Box)`
   //   border: 1px solid blue;
   display: flex;
   align-items: center;
-  gap: 0.5px;
 `;
 
 export const ContentTopViewIconWrapper = styled(Box)`
@@ -100,7 +107,7 @@ export const ContentTopMenuIconWrapper = styled(Box)`
 `;
 
 export const ContentTopMenuIcon = styled(Button)`
-  background: #dee2e7;
+  background: rgb(234, 237, 241);
   width: 100%;
   height: 100%;
   border-radius: 0 4px 4px 0;
