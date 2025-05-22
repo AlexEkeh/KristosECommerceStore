@@ -158,7 +158,7 @@ const AmazingDiscountSection = () => {
       >
         {products
           .filter((product) => product.section === "amazing discount")
-          .slice(0, 10)
+          .slice(0, 15)
           .map((item) => (
             <SwiperSlide
               key={item.id}
