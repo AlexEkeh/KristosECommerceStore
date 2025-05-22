@@ -4,6 +4,7 @@ import { ItemContainer } from "@/components/Content/style";
 import { SectionContainer } from "@/components/Global/SectionContainer";
 import BriefSection from "@/section/BriefSection";
 import CoreValueSection from "@/section/CoreValueSection";
+import ProductCategorySection from "@/section/ProductCategorySection";
 import Box from "@mui/material/Box";
 import React from "react";
 
@@ -18,7 +19,9 @@ const Cookers = () => {
       }}
     >
       <SectionContainer>
-        <ItemContainer>Cookers</ItemContainer>
+        <ItemContainer>
+          <ProductCategorySection category={"cooker"} />
+        </ItemContainer>
         <ItemContainer>
           <BriefSection />
         </ItemContainer>
