@@ -57,17 +57,21 @@ export const ContactForm = () => {
       </ContactInputWrapper>
 
       <ContactInputWrapper>
-        <ContactInputLabel htmlFor="user-contact-message">
+        <ContactInputLabel htmlFor="user-contact-us-message">
           What is on your mind? <span>*</span>
         </ContactInputLabel>
         <ContactTextAreaField
-          id="user-contact-message"
+          id="user-contact-us-message"
+          name="user-contact-us-message"
+          className="user-contact-us-message"
           required
           placeholder="Jot us a note and we’ll get back to you as quickly as possible"
         />
       </ContactInputWrapper>
       <ContactButtonWrapper>
-        <ContactSubmitButton>Submit</ContactSubmitButton>
+        <ContactSubmitButton id="contact-us-submit-button">
+          Submit
+        </ContactSubmitButton>
       </ContactButtonWrapper>
     </ContactFormContainer>
   );

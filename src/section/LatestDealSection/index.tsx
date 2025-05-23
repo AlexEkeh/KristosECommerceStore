@@ -172,6 +172,7 @@ const LatestDealSection = () => {
                   alt={item.slug}
                   onLikeClick={() => handleToggleLike(item.id)}
                   like={item.like}
+                  likeId={`${item.id}`}
                   likeStatus={item.like ? "liked" : "not liked"}
                   ratingValue={item.ratings / item.ratings_count}
                   ratingsCount={item.ratings_count}
