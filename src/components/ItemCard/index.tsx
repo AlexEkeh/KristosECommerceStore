@@ -26,6 +26,7 @@ interface ItemCardProps {
   onLikeClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   checked: boolean;
   like: boolean;
+  likeId: string | number;
   likeStatus: string | number | undefined;
   itemName: string;
   itemDescription: string;
@@ -45,6 +46,7 @@ export const ItemCard = ({
   onLikeClick,
   checked,
   like,
+  likeId,
   likeStatus,
   itemName,
   itemDescription,
@@ -99,6 +101,7 @@ export const ItemCard = ({
           <span className="status">{likeStatus}</span>
           <LikeItem
             value={like}
+            id={`${likeId}`}
             onClick={onLikeClick}
             checked={checked}
             icon={<FavoriteBorderOutlinedIcon fontSize="inherit" />}
@@ -151,7 +154,10 @@ export const ItemCard = ({
           /{ratingsCount})
         </ItemRateBox>
         <AddToCartButtonBox>
-          <AddToCartButton className="add-to-cart-button">
+          <AddToCartButton
+            id="add-to-cart-button"
+            className="add-to-cart-button"
+          >
             Add to Cart
           </AddToCartButton>
         </AddToCartButtonBox>
