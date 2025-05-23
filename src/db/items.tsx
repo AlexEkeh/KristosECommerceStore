@@ -153,7 +153,7 @@ const Item: ItemType[] = [
   {
     id: 10,
     like: true,
-    img: "GasCooker.svg",
+    img: "TV.svg",
     name: "GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "tv",
@@ -582,7 +582,7 @@ const Item: ItemType[] = [
   {
     id: 43,
     like: false,
-    img: "GasCooker.svg",
+    img: "Generator1.svg",
     name: "GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "generator",
