@@ -16,6 +16,7 @@
     "@mui/material": "^6.4.11",
     "@mui/material-nextjs": "^6.4.3",
     "framer-motion": "^12.4.7",
+    "hamburger-react": "^2.5.2",
     "next": "^15.3.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
