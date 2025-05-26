@@ -59,7 +59,12 @@ export const NavBar = ({ cartContent }: CartProps) => {
           <KeyboardArrowDownIcon fontSize="small" />
         </Link>
         {isDropDown && (
-          <NestedListItem style={{ display: isDropDown ? "grid" : "none" }}>
+          <NestedListItem
+            style={{
+              display: isDropDown ? "grid" : "none",
+              top: "56px !important",
+            }}
+          >
             {navLinks.map((link, index) => {
               const isActive =
                 pathname === link.href ||
