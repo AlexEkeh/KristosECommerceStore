@@ -25,7 +25,7 @@ const HeadContainerWrapper = styled(Box)`
 const Left = styled(Box)`
   width: 40%;
   height: 100%;
-  border: 1px solid green;
+  // border: 1px solid green;
   display: flex;
   align-items: center;
   justify-content: space-between;
