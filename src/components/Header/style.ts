@@ -28,7 +28,9 @@ const Left = styled(Box)`
   // border: 1px solid green;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 4%;
+  gap: 20px;
   @media (max-width: 872px) {
     width: 100%;
     display: flex;
@@ -42,6 +44,7 @@ const Left = styled(Box)`
 const NavBarWrapper = styled(Box)`
   height: 100%;
   flex-grow: 1;
+  padding: 0 5%;
   // border: 1px solid red;
   @media (max-width: 872px) {
     display: none;

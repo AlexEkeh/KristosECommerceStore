@@ -60,7 +60,7 @@ export const ContactSectionContentWrapper = styled(Box)`
   overflow: hidden;
   gap: 20px;
   //   border: 1px solid blue;
-  @media (max-width: 872px) {
+  @media (max-width: 660px) {
     flex-wrap: wrap;
   }
 `;
