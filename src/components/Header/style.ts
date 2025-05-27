@@ -7,7 +7,7 @@ const HeadContainer = styled(AppBar)`
   height: 100%;
   min-height: 80px;
   background-color: #ffffff;
-  /* border: 1px solid green; */
+  // border: 1px solid green;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +19,8 @@ const HeadContainerWrapper = styled(Box)`
   width: 100%;
   max-width: 1600px;
   height: 100%;
+  z-index: 18;
+  background-color: #ffffff;
   //   border: 1px solid green;
 `;
 
@@ -89,6 +91,23 @@ const HamburgerWrapper = styled(Box)`
   }
 `;
 
+const NavMenuWrapper = styled(Box)`
+  width: 100%;
+  height: 100%;
+  padding: 0 4% 200px;
+  // border: 1px solid green;
+  z-index: 17;
+  position: fixed;
+  background-color: #ffffff;
+  top: 80px;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-100%);
+  overflow-x: hidden;
+  @media (min-width: 873px) {
+    display: none;
+  }
+`;
+
 export {
   HeadContainer,
   HeadContainerWrapper,
@@ -96,4 +115,5 @@ export {
   NavBarWrapper,
   HamburgerWrapper,
   CartWrapper,
+  NavMenuWrapper,
 };
