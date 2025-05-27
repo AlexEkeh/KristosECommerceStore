@@ -57,7 +57,6 @@ export const NestedListItem = styled("ul")`
   height: 100%;
   min-height: fit-content;
   //   border: 1px solid navy;
-  color: #505050;
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
@@ -77,6 +76,7 @@ export const NestedListItem = styled("ul")`
   .li {
     width: 100%;
     justify-content: flex-start;
+    color: #505050;
   }
   .li:hover {
     color: #32c770;
