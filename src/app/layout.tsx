@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geistInter.className}>
+    <html lang="en" className={geistInter.className} id="app-body">
       {/*Olumide: i adde the inter font*/}
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>

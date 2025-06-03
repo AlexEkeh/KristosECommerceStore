@@ -158,6 +158,7 @@ const AmazingDiscountSection = () => {
       >
         {products
           .filter((product) => product.section === "amazing discount")
+          .slice(0, 15)
           .map((item) => (
             <SwiperSlide
               key={item.id}
@@ -169,14 +170,16 @@ const AmazingDiscountSection = () => {
                 alt={item.slug}
                 onLikeClick={() => handleToggleLike(item.id)}
                 like={item.like}
+                likeId={`${item.id}`}
                 likeStatus={item.like ? "liked" : "not liked"}
                 ratingValue={item.ratings / item.ratings_count}
                 ratingsCount={item.ratings_count}
                 ratingReadOnly={true}
                 itemName={item.name}
-                itemCategory={item.category}
+                itemDescription={item.description}
                 itemAmount={item.amount}
                 checked={item.like}
+                isGridView
               />
             </SwiperSlide>
           ))}

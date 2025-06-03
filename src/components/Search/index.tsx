@@ -17,6 +17,7 @@ const Search = () => {
         inputRef={inputRef}
         placeholder="Search Products"
         inputProps={{ "aria-label": "search" }}
+        id="app-search"
       />
       <SearchIconWrapper onClick={focusInput}>
         <SearchIcon sx={{ color: "#3c3c3c", fontSize: "1.8rem" }} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   AddToCartButton,
   AddToCartButtonBox,
@@ -8,7 +8,7 @@ import {
   ItemCardImageLikeWrapper,
   ItemCardItemImageBox,
   ItemCardItemLikeBox,
-  ItemCategoryBox,
+  ItemDescriptionBox,
   ItemImage,
   ItemName,
   ItemNameAmountBox,
@@ -26,9 +26,10 @@ interface ItemCardProps {
   onLikeClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
   checked: boolean;
   like: boolean;
+  likeId: string | number;
   likeStatus: string | number | undefined;
   itemName: string;
-  itemCategory: string;
+  itemDescription: string;
   itemAmount: number | string;
   ratingReadOnly: boolean;
   ratingValue?: number | null;
@@ -36,6 +37,7 @@ interface ItemCardProps {
   onRatingChange?:
     | ((event: React.SyntheticEvent, value: number | null) => void)
     | undefined;
+  isGridView: boolean; // Set isGridView to true by default
 }
 
 export const ItemCard = ({
@@ -44,22 +46,62 @@ export const ItemCard = ({
   onLikeClick,
   checked,
   like,
+  likeId,
   likeStatus,
   itemName,
-  itemCategory,
+  itemDescription,
   itemAmount,
   ratingReadOnly,
   ratingValue,
   ratingsCount,
   onRatingChange,
+  isGridView,
 }: ItemCardProps) => {
   return (
-    <ItemCardContainer className="item-card-container">
-      <ItemCardImageLikeWrapper>
-        <ItemCardItemLikeBox>
+    <ItemCardContainer
+      className="item-card-container"
+      sx={
+        isGridView
+          ? null
+          : {
+              flexDirection: "row",
+              width: "100%",
+              minWidth: "100%",
+              maxHeight: "fit-content",
+              gap: "8% !important",
+              justifyContent: "flex-start",
+            }
+      }
+      flexDirection={isGridView ? "column" : "row"}
+    >
+      <ItemCardImageLikeWrapper
+        sx={
+          isGridView
+            ? null
+            : {
+                width: "100%",
+                maxWidth: "fit-content",
+                maxHeight: "fit-content",
+                alignItems: "center",
+                padding: "10px 20px 20px",
+              }
+        }
+      >
+        <ItemCardItemLikeBox
+          sx={
+            isGridView
+              ? null
+              : {
+                  justifyContent: "flex-start",
+                  maxHeight: "fit-content",
+                  padding: "2px 0",
+                }
+          }
+        >
           <span className="status">{likeStatus}</span>
           <LikeItem
             value={like}
+            id={`${likeId}`}
             onClick={onLikeClick}
             checked={checked}
             icon={<FavoriteBorderOutlinedIcon fontSize="inherit" />}
@@ -68,16 +110,30 @@ export const ItemCard = ({
             }
           />
         </ItemCardItemLikeBox>
-        <ItemCardItemImageBox>
+
+        <ItemCardItemImageBox
+          sx={
+            isGridView
+              ? null
+              : {
+                  justifyContent: "flex-start",
+                  alignSelf: "flex-start",
+                  maxHeight: "fit-content",
+                }
+          }
+        >
           <ItemImage src={imageSrc} alt={alt} />
         </ItemCardItemImageBox>
       </ItemCardImageLikeWrapper>
-      <ItemCardDetailBox>
+      <ItemCardDetailBox
+        sx={isGridView ? null : { maxWidth: "1000px !important" }}
+      >
         <ItemNameAmountBox>
           <ItemName>{itemName}</ItemName>
           <ItemAmount>{itemAmount}</ItemAmount>
         </ItemNameAmountBox>
-        <ItemCategoryBox>{itemCategory}</ItemCategoryBox>
+
+        <ItemDescriptionBox>{itemDescription}</ItemDescriptionBox>
         <ItemRateBox>
           <Stack spacing={1} height={"fit-content"}>
             <Rating
@@ -98,7 +154,10 @@ export const ItemCard = ({
           /{ratingsCount})
         </ItemRateBox>
         <AddToCartButtonBox>
-          <AddToCartButton className="add-to-cart-button">
+          <AddToCartButton
+            id="add-to-cart-button"
+            className="add-to-cart-button"
+          >
             Add to Cart
           </AddToCartButton>
         </AddToCartButtonBox>
