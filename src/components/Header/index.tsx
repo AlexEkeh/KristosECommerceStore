@@ -18,7 +18,7 @@ import { Cart } from "../Cart";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavMenu } from "../NavMenu";
-import { style } from "framer-motion/client";
+// import { style } from "framer-motion/client";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

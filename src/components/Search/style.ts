@@ -1,5 +1,6 @@
 import { styled} from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import { Button } from '@mui/material';
 
 
 // MATERIAL-UI-5 BREAK POINTS
@@ -12,10 +13,12 @@ import InputBase from '@mui/material/InputBase';
 
 const SearchWrapper = styled("div")(({ theme }) => ({
     display: "flex",
+    justifyContent: "space-between",
     alignItems: "center",
-    width: "529px",
-    height: "35px",
+    width: "50rem",
+    height: "3rem",
     borderRadius: "16px",
+    // border: '1px solid red',
     backgroundColor: "#F2F2F2",
     [theme.breakpoints.between("xs", "md")]: {
       // 0 - 900px //
@@ -29,24 +32,22 @@ const SearchWrapper = styled("div")(({ theme }) => ({
     },
   }));
 
-  const SearchIconWrapper = styled("button")(({
-    // padding: theme.spacing(0, 2),
-    flexGrow: 1,
-    //   pointerEvents: "none",
+  const SearchIconWrapper = styled(Button)(({
+    flexGrow: 0.5,
     cursor: "pointer",
     borderRadius: "16px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border: "none",
-    backgroundColor: "transparent",
-    //   border: "1px solid red",
+    backgroundColor: "#fba900",
+    opacity: '0.5',
+    height: '3rem',
   }));
 
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "80%",
-    height: "32px",
+    height: "3rem",
     backgroundColor: "#F2F2F2",
     borderRadius: "16px",
     "& .MuiInputBase-input": {
