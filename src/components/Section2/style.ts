@@ -1,6 +1,8 @@
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { Link } from "@mui/material";
+// import Link from "next/link";
 
 const Section2Container = styled(Box)`
   width: 100%;
@@ -51,8 +53,9 @@ const TopContent = styled(Box)`
   padding: 45px 3% 0;
 `;
 
-const TopContentItem = styled(Box)`
+const TopContentItem = styled(Link)`
   /* max-width: 95%; */
+  position: relative;
   height: 90%;
   background: #d3ffd9;
   display: flex;
@@ -61,9 +64,14 @@ const TopContentItem = styled(Box)`
   align-items: center;
   border-radius: 8px;
   cursor: pointer;
-  // border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100%;
   min-width: fit-content;
+  &:hover {
+    transform: scale(95%);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
+    transition: all 0.6s ease-in-out;
+  }
 `;
 
 const ItemName = styled(Typography)`
@@ -87,6 +95,7 @@ const Product = styled(Box)`
   justify-content: space-evenly;
   align-items: center;
   // border: 1px solid blue;
+
 `;
 
 const Center = styled(Box)`

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   BriefSectionContainer,
@@ -33,7 +35,7 @@ const BriefSection = () => {
             electronic needs.
           </BriefSectionContentDescription>
           <BriefSectionContentButtonContainer>
-            <ContactUsButton href="/">
+            <ContactUsButton href="#contact-us">
               <span>Contact Us</span>
             </ContactUsButton>
           </BriefSectionContentButtonContainer>

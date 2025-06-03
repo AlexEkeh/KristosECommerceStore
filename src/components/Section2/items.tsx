@@ -1,3 +1,5 @@
+import { basePath } from "@/utilities/basePath";
+
 interface ProductCatType {
   id: number;
   name: string;
@@ -5,6 +7,7 @@ interface ProductCatType {
   width: number;
   height: number;
   alt: string;
+  href: string;
 }
 
 const ProductCategories: ProductCatType[] = [
@@ -15,6 +18,7 @@ const ProductCategories: ProductCatType[] = [
     width: 134,
     height: 137,
     alt: "Washing Machine",
+    href: `${basePath}/home/washing_machine`,
   },
   {
     id: 1,
@@ -23,6 +27,7 @@ const ProductCategories: ProductCatType[] = [
     width: 113,
     height: 144,
     alt: "Cooker",
+    href: `${basePath}/home/cookers`,
   },
   {
     id: 2,
@@ -31,6 +36,7 @@ const ProductCategories: ProductCatType[] = [
     width: 155,
     height: 76,
     alt: "Air Condition",
+    href: `${basePath}/home/air_condition`,
   },
   {
     id: 3,
@@ -39,6 +45,7 @@ const ProductCategories: ProductCatType[] = [
     width: 143,
     height: 103,
     alt: "Tv",
+    href: `${basePath}/home/tv`,
   },
   {
     id: 4,
@@ -47,6 +54,7 @@ const ProductCategories: ProductCatType[] = [
     width: 129,
     height: 104,
     alt: "Generator",
+    href: `${basePath}/home/generator`,
   },
   {
     id: 5,
@@ -55,6 +63,7 @@ const ProductCategories: ProductCatType[] = [
     width: 79,
     height: 140,
     alt: "Blender",
+    href: `${basePath}/home/blender`,
   },
 ];
 

@@ -34,6 +34,7 @@ const Section = () => {
           <Section1 />
         </ItemContainer>
 
+        {/* Welcome to Kristos Electronics */}
         <ItemContainer sx={{ background: "#ffffff" }}>
           <Section2 />
         </ItemContainer>
@@ -79,7 +80,7 @@ const Section = () => {
         </ItemContainer>
 
         {/* Contact Us section */}
-        <ItemContainer>
+        <ItemContainer id="contact-us">
           <ContactSection />
         </ItemContainer>
       </SectionContainer>
