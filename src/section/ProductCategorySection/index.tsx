@@ -8,6 +8,7 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { ItemType, Item } from "@/db/items";
 import { ItemCard } from "@/components/ItemCard";
 import { basePath } from "@/utilities/basePath";
+import { FilterSortMenu } from "@/components/FilterSortMenu";
 
 interface GetItemsFromDBCallback {
   (items: ItemType[]): void;
@@ -18,9 +19,10 @@ interface ProductCategorySectionProps {
 }
 
 const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
-  const [isGridView, setIsGridView] = useState(true);
-  const [isOpen, setIsOpen] = useState(true);
-  const [isGrid, setIsGrid] = useState(true);
+  const [isGridView, setIsGridView] = useState(true); //state for items layout
+  const [isOpen, setIsOpen] = useState(false); //State for menu
+  const [isGrid, setIsGrid] = useState(true); //State for grid
+  const [sort, setSort] = useState(true); //State for sort
 
   const [products, setProducts] = useState<ItemType[]>([]);
 
@@ -57,7 +59,7 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
         console.log("IndexedDB initialized successfully!");
       };
 
-      // Save Items to de ################################
+      // Save Items to db ################################
       const saveItemsToDB = () => {
         const request = indexedDB.open("KristosDB", 1);
 
@@ -130,9 +132,18 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
     setIsGrid((prev) => !prev);
   };
 
+  const onToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   const filteredProducts = products.filter(
     (product) => product.category === `${category}`
   );
+
+  const priceSortAsc = (a: ItemType, b: ItemType) =>
+    Number(a.amount) - Number(b.amount);
+  const priceSortDsc = (a: ItemType, b: ItemType) =>
+    Number(a.amount) + Number(b.amount);
 
   return (
     <ProductSectionContainer>
@@ -140,9 +151,9 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
         category={category}
         itemNo={filteredProducts.length}
         viewIcon={isGridView ? <WindowIcon /> : <FormatListBulletedIcon />}
-        menuIcon={isOpen ? <MenuIcon /> : <MenuOpenIcon />}
+        menuIcon={isOpen ? <MenuOpenIcon /> : <MenuIcon />}
         onViewIconClick={handleViewClick}
-        onMenuIconClick={() => setIsOpen((prev) => !prev)}
+        onMenuIconClick={onToggle}
       />
       <ProductsWrapper
         sx={{
@@ -153,6 +164,7 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
       >
         {products
           .filter((product) => product.category === `${category}`)
+          .sort(sort ? priceSortAsc : priceSortDsc)
           .map((item) => (
             <ItemCard
               key={item.id}
@@ -173,6 +185,13 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
             />
           ))}
       </ProductsWrapper>
+      {isOpen! && (
+        <FilterSortMenu
+          onClick={onToggle}
+          priceSortClick={() => setSort(!sort)}
+          priceSort={sort}
+        />
+      )}
     </ProductSectionContainer>
   );
 };

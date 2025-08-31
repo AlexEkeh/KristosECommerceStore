@@ -130,7 +130,7 @@ export const ItemCard = ({
       >
         <ItemNameAmountBox>
           <ItemName>{itemName}</ItemName>
-          <ItemAmount>{itemAmount}</ItemAmount>
+          <ItemAmount>N{itemAmount.toLocaleString()}</ItemAmount>
         </ItemNameAmountBox>
 
         <ItemDescriptionBox>{itemDescription}</ItemDescriptionBox>
