@@ -20,6 +20,7 @@ interface ContentTopProps {
   category: string;
   itemNo: number | null;
   viewIcon: ReactNode;
+  viewType: string;
   menuIcon: ReactNode;
   onViewIconClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
   onMenuIconClick: React.MouseEventHandler<HTMLButtonElement> | undefined;
@@ -29,13 +30,11 @@ export const ContentTop = ({
   category,
   itemNo,
   viewIcon,
+  viewType,
   menuIcon,
   onViewIconClick,
   onMenuIconClick,
 }: ContentTopProps) => {
-  const [isGridView, setIsGridView] = useState(true);
-  const [isOpen, setIsOpen] = useState(true);
-
   return (
     <ContentTopContainer>
       <ContentTopWrapper>
@@ -47,19 +46,25 @@ export const ContentTop = ({
             {itemNo != null && itemNo !== 0 ? itemNo : null}{" "}
             {itemNo != null && itemNo !== 0
               ? `${itemNo > 1 ? "Items found" : "item found"}`
-              : `No items found`}
+              : `No item found`}
           </ContentTopItemSummary>
         </ContentTopTextBox>
 
         <ContentTopMenuViewBox>
           <ContentTopViewIconWrapper>
-            <ContentTopViewIcon onClick={onViewIconClick}>
+            <ContentTopViewIcon
+              onClick={onViewIconClick}
+              title={`${viewType} view`}
+            >
               {viewIcon}
             </ContentTopViewIcon>
           </ContentTopViewIconWrapper>
 
           <ContentTopMenuIconWrapper>
-            <ContentTopMenuIcon onClick={onMenuIconClick}>
+            <ContentTopMenuIcon
+              onClick={onMenuIconClick}
+              title="filter & sort menu"
+            >
               {menuIcon}
             </ContentTopMenuIcon>
           </ContentTopMenuIconWrapper>

@@ -1,5 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { ProductSectionContainer, ProductsWrapper } from "./style";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  ClearFilterButton,
+  ProductSectionContainer,
+  ProductsWrapper,
+  SortFilterStatusBox,
+  SortStatus,
+  SortStatusWrapper,
+} from "./style";
 import { ContentTop } from "@/components/Global/ContentTop";
 import WindowIcon from "@mui/icons-material/Window";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
@@ -8,7 +15,15 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { ItemType, Item } from "@/db/items";
 import { ItemCard } from "@/components/ItemCard";
 import { basePath } from "@/utilities/basePath";
-import { FilterSortMenu } from "@/components/FilterSortMenu";
+import {
+  FilterSortMenu,
+  getSortLabel,
+  SortOptionProp,
+} from "@/components/FilterSortMenu";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+import { Button } from "@mui/material";
+import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
 
 interface GetItemsFromDBCallback {
   (items: ItemType[]): void;
@@ -22,9 +37,15 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
   const [isGridView, setIsGridView] = useState(true); //state for items layout
   const [isOpen, setIsOpen] = useState(false); //State for menu
   const [isGrid, setIsGrid] = useState(true); //State for grid
-  const [sort, setSort] = useState(true); //State for sort
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   const [products, setProducts] = useState<ItemType[]>([]);
+  const [displayedProducts, setDisplayedProducts] = useState<ItemType[]>([]);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const [clearFilterButton, setClearFilterButton] = useState(false);
 
   // Move getItemsFromDB to component scope so it can be used in multiple places
   const getItemsFromDB = (callback: GetItemsFromDBCallback): void => {
@@ -78,7 +99,13 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
       };
       saveItemsToDB(); // Save Item array to IndexedDB #####
 
-      getItemsFromDB((items) => setProducts(items)); // Fetch and store in state
+      getItemsFromDB((items) => {
+        setProducts(items);
+        const categoryItems = items.filter(
+          (item) => item.category === category
+        );
+        setDisplayedProducts(categoryItems);
+      }); // Fetch and store in state
     }
   }, []); //#############################################
 
@@ -113,7 +140,7 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
   // Create a method to upgrade indexedDB on click event #####
   const handleToggleLike = (id: number) => {
     updateLikeInDB(id);
-    setProducts((prev) =>
+    setDisplayedProducts((prev) =>
       prev.map((product) =>
         product.id === id ? { ...product, like: !product.like } : product
       )
@@ -136,25 +163,133 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
     setIsOpen((prev) => !prev);
   };
 
-  const filteredProducts = products.filter(
-    (product) => product.category === `${category}`
-  );
+  // useEffect to scroll to top on pagination data change or update ###
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
-  const priceSortAsc = (a: ItemType, b: ItemType) =>
-    Number(a.amount) - Number(b.amount);
-  const priceSortDsc = (a: ItemType, b: ItemType) =>
-    Number(a.amount) + Number(b.amount);
+  //State for sorting
+  const [sortOption, setSortOption] = useState<SortOptionProp>("dateAsc");
+
+  //Sort Function
+  const sortFunctions = {
+    nameAsc: (a: ItemType, b: ItemType) => a.name.localeCompare(b.name),
+    nameDsc: (a: ItemType, b: ItemType) => b.name.localeCompare(a.name),
+    priceAsc: (a: ItemType, b: ItemType) => Number(a.amount) - Number(b.amount),
+    priceDsc: (a: ItemType, b: ItemType) => Number(b.amount) - Number(a.amount),
+    dateAsc: (a: ItemType, b: ItemType) =>
+      new Date(a.date).getTime() - new Date(b.date).getTime(),
+    dateDsc: (a: ItemType, b: ItemType) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime(),
+  };
+
+  // State for filter
+  const [minPrice, setMinPrice] = useState<number>(0);
+  const [maxPrice, setMaxPrice] = useState<number>(0);
+  const [defaultMinPrice, setDefaultMinPrice] = useState<number>(0);
+  const [defaultMaxPrice, setDefaultMaxPrice] = useState<number>(0);
+
+  //Use Effect to set min max default filter value
+  useEffect(() => {
+    if (products.length > 0) {
+      const categoryProducts = products.filter(
+        (product) => product.category === category
+      );
+
+      if (categoryProducts.length > 0) {
+        const amounts = categoryProducts.map((p) => Number(p.amount));
+        const min = Math.min(...amounts);
+        const max = Math.max(...amounts);
+
+        setDefaultMinPrice(min);
+        setDefaultMaxPrice(max);
+
+        // Only set min/max if user hasn't changed them yet
+        if (minPrice === 0 && maxPrice === 0) {
+          setMinPrice(min);
+          setMaxPrice(max);
+        }
+      }
+    }
+  }, [products, category]);
+
+  // Apply Filter Button on Click
+  const handleApplyFilter = () => {
+    getItemsFromDB((items) => {
+      const filteredProducts = items.filter(
+        (product) =>
+          product.category === category &&
+          Number(product.amount) >= minPrice &&
+          Number(product.amount) <= maxPrice
+      );
+
+      setProducts(items); // optional: keep full dataset in sync
+      setDisplayedProducts(filteredProducts);
+    });
+    setIsOpen(!isOpen);
+    setClearFilterButton(true);
+  };
+
+  //Reset Filter Button on Click
+  const handleResetFilter = () => {
+    getItemsFromDB((items) => {
+      const categoryItems = items.filter((item) => item.category === category);
+      setDisplayedProducts(categoryItems);
+
+      setMinPrice(defaultMinPrice);
+      setMaxPrice(defaultMaxPrice);
+    });
+    setIsOpen(false);
+    setClearFilterButton(false);
+  };
+
+  //Handle close FilterMenu on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  //Handle filter clear button click
+  const handleClearFilter = () => {
+    handleResetFilter();
+    setIsOpen(false);
+    setClearFilterButton(false);
+  };
 
   return (
     <ProductSectionContainer>
       <ContentTop
         category={category}
-        itemNo={filteredProducts.length}
+        itemNo={displayedProducts.length}
         viewIcon={isGridView ? <WindowIcon /> : <FormatListBulletedIcon />}
+        viewType={isGridView ? "Grid" : "List"}
         menuIcon={isOpen ? <MenuOpenIcon /> : <MenuIcon />}
         onViewIconClick={handleViewClick}
         onMenuIconClick={onToggle}
       />
+      <SortFilterStatusBox>
+        <SortStatusWrapper>
+          Sorted by:{" "}
+          <SortStatus onClick={() => setIsOpen(true)}>
+            {" "}
+            {getSortLabel(sortOption)}{" "}
+          </SortStatus>
+        </SortStatusWrapper>
+        {clearFilterButton && (
+          <ClearFilterButton onClick={handleClearFilter} color="error">
+            <FilterAltOffIcon />
+            Clear all Filter
+          </ClearFilterButton>
+        )}
+      </SortFilterStatusBox>
       <ProductsWrapper
         sx={{
           gridTemplateColumns: `${
@@ -162,9 +297,10 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
           }`,
         }}
       >
-        {products
+        {displayedProducts
           .filter((product) => product.category === `${category}`)
-          .sort(sort ? priceSortAsc : priceSortDsc)
+          .sort(sortFunctions[sortOption])
+          .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
           .map((item) => (
             <ItemCard
               key={item.id}
@@ -179,17 +315,36 @@ const ProductCategorySection = ({ category }: ProductCategorySectionProps) => {
               ratingReadOnly={true}
               itemName={item.name}
               itemDescription={item.description}
+              currency={item.currency}
               itemAmount={item.amount}
               checked={item.like}
               isGridView={isGrid}
             />
           ))}
       </ProductsWrapper>
+      <Stack>
+        <Pagination
+          count={Math.ceil(displayedProducts.length / itemsPerPage)}
+          page={currentPage}
+          onChange={(_, value) => setCurrentPage(value)}
+          shape="rounded"
+          showFirstButton
+          showLastButton
+        />
+      </Stack>
       {isOpen! && (
         <FilterSortMenu
+          ref={menuRef}
           onClick={onToggle}
-          priceSortClick={() => setSort(!sort)}
-          priceSort={sort}
+          additionalMethod={() => setIsOpen(false)}
+          sortOption={sortOption}
+          onSortChange={(option) => setSortOption(option)}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          onMinPriceChange={setMinPrice}
+          onMaxPriceChange={setMaxPrice}
+          onApplyFilter={handleApplyFilter}
+          onResetFilter={handleResetFilter}
         />
       )}
     </ProductSectionContainer>

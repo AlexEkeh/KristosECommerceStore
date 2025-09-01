@@ -1,4 +1,5 @@
 interface ItemType {
+  date: string | number | Date;
   id: number;
   like: boolean;
   img: string;
@@ -12,6 +13,7 @@ interface ItemType {
     | "generator"
     | "blender"
     | "freezer";
+  currency: "NGN";
   amount: number;
   ratings: number;
   ratings_count: number;
@@ -32,6 +34,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Television",
     section: "amazing discount",
+    date: "02/09/2025",
+    currency: "NGN",
   },
   {
     id: 1,
@@ -45,6 +49,8 @@ const Item: ItemType[] = [
     ratings_count: 11,
     slug: "Television",
     section: "amazing discount",
+    date: "02/08/2025",
+    currency: "NGN",
   },
   {
     id: 2,
@@ -58,6 +64,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Television",
     section: "special offers",
+    date: "23/07/2025",
+    currency: "NGN",
   },
   {
     id: 3,
@@ -71,6 +79,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Television",
     section: "latest deals",
+    date: "22/08/2025",
+    currency: "NGN",
   },
   {
     id: 4,
@@ -84,6 +94,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Television",
     section: "special offers",
+    date: "01/09/2025",
+    currency: "NGN",
   },
   {
     id: 5,
@@ -97,6 +109,8 @@ const Item: ItemType[] = [
     ratings_count: 12,
     slug: "Television",
     section: "latest deals",
+    date: "01/08/2024",
+    currency: "NGN",
   },
   {
     id: 6,
@@ -110,6 +124,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Television",
     section: "amazing discount",
+    date: "02/05/2025",
+    currency: "NGN",
   },
   {
     id: 7,
@@ -123,6 +139,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Television",
     section: "amazing discount",
+    date: "21/01/2025",
+    currency: "NGN",
   },
   {
     id: 8,
@@ -136,6 +154,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Television",
     section: "amazing discount",
+    date: "11/05/2025",
+    currency: "NGN",
   },
   {
     id: 9,
@@ -149,6 +169,8 @@ const Item: ItemType[] = [
     ratings_count: 7,
     slug: "Television",
     section: "latest deals",
+    date: "28/07/2025",
+    currency: "NGN",
   },
   {
     id: 10,
@@ -162,6 +184,8 @@ const Item: ItemType[] = [
     ratings_count: 5,
     slug: "Gas Cooker",
     section: "amazing discount",
+    date: "14/03/2024",
+    currency: "NGN",
   },
   {
     id: 11,
@@ -175,6 +199,8 @@ const Item: ItemType[] = [
     ratings_count: 8,
     slug: "Gas Cooker",
     section: "amazing discount",
+    date: "15/05/2025",
+    currency: "NGN",
   },
   {
     id: 12,
@@ -188,6 +214,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Gas Cooker",
     section: "special offers",
+    date: "14/03/2025",
+    currency: "NGN",
   },
   {
     id: 13,
@@ -201,6 +229,8 @@ const Item: ItemType[] = [
     ratings_count: 4,
     slug: "Gas Cooker",
     section: "latest deals",
+    date: "06/06/2024",
+    currency: "NGN",
   },
   {
     id: 14,
@@ -214,6 +244,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Gas Cooker",
     section: "special offers",
+    date: "16/05/2024",
+    currency: "NGN",
   },
   {
     id: 15,
@@ -227,6 +259,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Gas Cooker",
     section: "special offers",
+    date: "13/09/2024",
+    currency: "NGN",
   },
   {
     id: 16,
@@ -240,6 +274,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Gas Cooker",
     section: "special offers",
+    date: "04/04/2024",
+    currency: "NGN",
   },
   {
     id: 17,
@@ -253,6 +289,8 @@ const Item: ItemType[] = [
     ratings_count: 15,
     slug: "Gas Cooker",
     section: "special offers",
+    date: "03/05/2025",
+    currency: "NGN",
   },
   {
     id: 18,
@@ -266,6 +304,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Gas Cooker",
     section: "amazing discount",
+    date: "12/12/2024",
+    currency: "NGN",
   },
   {
     id: 19,
@@ -279,6 +319,8 @@ const Item: ItemType[] = [
     ratings_count: 7,
     slug: "Washing MAchine",
     section: "amazing discount",
+    date: "18/02/2025",
+    currency: "NGN",
   },
   {
     id: 20,
@@ -292,6 +334,8 @@ const Item: ItemType[] = [
     ratings_count: 5,
     slug: "Washing Machine",
     section: "latest deals",
+    date: "20/07/16",
+    currency: "NGN",
   },
   {
     id: 21,
@@ -305,6 +349,8 @@ const Item: ItemType[] = [
     ratings_count: 8,
     slug: "Washing Machine",
     section: "amazing discount",
+    date: "10/10/2024",
+    currency: "NGN",
   },
   {
     id: 22,
@@ -318,6 +364,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Washing Machine",
     section: "special offers",
+    date: "03/03/2023",
+    currency: "NGN",
   },
   {
     id: 23,
@@ -331,6 +379,8 @@ const Item: ItemType[] = [
     ratings_count: 4,
     slug: "Washing Machine",
     section: "amazing discount",
+    date: "30/06/2025",
+    currency: "NGN",
   },
   {
     id: 24,
@@ -344,6 +394,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Washing Machine",
     section: "special offers",
+    date: "24/04/2024",
+    currency: "NGN",
   },
   {
     id: 25,
@@ -357,6 +409,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Washing Machine",
     section: "special offers",
+    date: "17/07/2025",
+    currency: "NGN",
   },
   {
     id: 26,
@@ -370,6 +424,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Washing Machine",
     section: "latest deals",
+    date: "11/05/2025",
+    currency: "NGN",
   },
   {
     id: 27,
@@ -383,6 +439,8 @@ const Item: ItemType[] = [
     ratings_count: 15,
     slug: "Washing Machine",
     section: "special offers",
+    date: "31/08/2025",
+    currency: "NGN",
   },
   {
     id: 28,
@@ -396,6 +454,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Blender",
     section: "latest deals",
+    date: "30/06/2025",
+    currency: "NGN",
   },
   {
     id: 29,
@@ -409,6 +469,8 @@ const Item: ItemType[] = [
     ratings_count: 7,
     slug: "Blender",
     section: "amazing discount",
+    date: "29/07/2025",
+    currency: "NGN",
   },
   {
     id: 30,
@@ -422,6 +484,8 @@ const Item: ItemType[] = [
     ratings_count: 5,
     slug: "Blender",
     section: "special offers",
+    date: "22/02/2024",
+    currency: "NGN",
   },
   {
     id: 31,
@@ -435,6 +499,8 @@ const Item: ItemType[] = [
     ratings_count: 8,
     slug: "Blender",
     section: "amazing discount",
+    date: "21/01/2025",
+    currency: "NGN",
   },
   {
     id: 32,
@@ -448,6 +514,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Blender",
     section: "special offers",
+    date: "07/04/2023",
+    currency: "NGN",
   },
   {
     id: 33,
@@ -461,6 +529,8 @@ const Item: ItemType[] = [
     ratings_count: 4,
     slug: "Blender",
     section: "amazing discount",
+    date: "13/12/2024",
+    currency: "NGN",
   },
   {
     id: 34,
@@ -474,6 +544,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Air Conditioner",
     section: "special offers",
+    date: "23/09/2023",
+    currency: "NGN",
   },
   {
     id: 35,
@@ -487,6 +559,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Air Conditioner",
     section: "latest deals",
+    date: "09/09/2024",
+    currency: "NGN",
   },
   {
     id: 36,
@@ -500,6 +574,8 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Air conditioner",
     section: "special offers",
+    date: "19/01/2025",
+    currency: "NGN",
   },
   {
     id: 37,
@@ -513,6 +589,8 @@ const Item: ItemType[] = [
     ratings_count: 15,
     slug: "Air Conditioner",
     section: "special offers",
+    date: "20/02/2025",
+    currency: "NGN",
   },
   {
     id: 38,
@@ -526,6 +604,8 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Generator",
     section: "latest deals",
+    date: "14/02/2025",
+    currency: "NGN",
   },
   {
     id: 39,
@@ -539,6 +619,8 @@ const Item: ItemType[] = [
     ratings_count: 7,
     slug: "Generator",
     section: "amazing discount",
+    date: "06/04/2025",
+    currency: "NGN",
   },
   {
     id: 40,
@@ -552,12 +634,14 @@ const Item: ItemType[] = [
     ratings_count: 5,
     slug: "Generator",
     section: "amazing discount",
+    date: "20/10/2024",
+    currency: "NGN",
   },
   {
     id: 41,
     like: false,
     img: "Generator1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "J GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "generator",
     amount: 100500,
@@ -565,12 +649,14 @@ const Item: ItemType[] = [
     ratings_count: 8,
     slug: "Generator",
     section: "amazing discount",
+    date: "12/07/2025",
+    currency: "NGN",
   },
   {
     id: 42,
     like: true,
     img: "Generator1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "I GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "generator",
     amount: 90999,
@@ -578,12 +664,14 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Generator",
     section: "amazing discount",
+    date: "05/05/2025",
+    currency: "NGN",
   },
   {
     id: 43,
     like: false,
     img: "Generator1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "H GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "generator",
     amount: 180999,
@@ -591,12 +679,14 @@ const Item: ItemType[] = [
     ratings_count: 4,
     slug: "Generator",
     section: "special offers",
+    date: "04/04/2024",
+    currency: "NGN",
   },
   {
     id: 44,
     like: true,
     img: "Generator1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "G GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "generator",
     amount: 75800,
@@ -604,12 +694,14 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Generator",
     section: "latest deals",
+    date: "06/06/2025",
+    currency: "NGN",
   },
   {
     id: 45,
     like: true,
     img: "Generator1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "F GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "generator",
     amount: 2500500,
@@ -617,12 +709,14 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Generator",
     section: "special offers",
+    date: "10/10/2023",
+    currency: "NGN",
   },
   {
     id: 46,
     like: true,
     img: "Freezer1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "E GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "freezer",
     amount: 5999,
@@ -630,12 +724,14 @@ const Item: ItemType[] = [
     ratings_count: 9,
     slug: "Freezer",
     section: "amazing discount",
+    date: "11/11/2024",
+    currency: "NGN",
   },
   {
     id: 47,
     like: true,
     img: "Fridge1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "D GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "freezer",
     amount: 90999,
@@ -643,12 +739,14 @@ const Item: ItemType[] = [
     ratings_count: 15,
     slug: "Freezer",
     section: "special offers",
+    date: "12/12/2023",
+    currency: "NGN",
   },
   {
     id: 48,
     like: true,
     img: "Freezer1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "C GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "freezer",
     amount: 1500000,
@@ -656,12 +754,14 @@ const Item: ItemType[] = [
     ratings_count: 10,
     slug: "Freezer",
     section: "amazing discount",
+    date: "08/09/2024",
+    currency: "NGN",
   },
   {
     id: 49,
     like: true,
     img: "Fridge1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "B GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "freezer",
     amount: 9999,
@@ -669,12 +769,14 @@ const Item: ItemType[] = [
     ratings_count: 7,
     slug: "Freezer",
     section: "latest deals",
+    date: "20/03/2024",
+    currency: "NGN",
   },
   {
     id: 50,
     like: true,
     img: "Freezer1.svg",
-    name: "GoPro HERO6 4K Action",
+    name: "A GoPro HERO6 4K Action",
     description: "Camera - Black",
     category: "freezer",
     amount: 12999,
@@ -682,6 +784,8 @@ const Item: ItemType[] = [
     ratings_count: 5,
     slug: "Freezer",
     section: "special offers",
+    date: "26/05/2025",
+    currency: "NGN",
   },
 ];
 
