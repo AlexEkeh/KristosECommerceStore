@@ -30,6 +30,7 @@ interface ItemCardProps {
   likeStatus: string | number | undefined;
   itemName: string;
   itemDescription: string;
+  currency: string;
   itemAmount: number | string;
   ratingReadOnly: boolean;
   ratingValue?: number | null;
@@ -50,6 +51,7 @@ export const ItemCard = ({
   likeStatus,
   itemName,
   itemDescription,
+  currency,
   itemAmount,
   ratingReadOnly,
   ratingValue,
@@ -129,11 +131,25 @@ export const ItemCard = ({
         sx={isGridView ? null : { maxWidth: "1000px !important" }}
       >
         <ItemNameAmountBox>
-          <ItemName>{itemName}</ItemName>
-          <ItemAmount>{itemAmount}</ItemAmount>
+          <ItemName title={itemName}>{itemName}</ItemName>
+          <ItemAmount
+            title={new Intl.NumberFormat("en-NG", {
+              style: "currency",
+              currency: currency,
+              minimumFractionDigits: 0,
+            }).format(Number(itemAmount))}
+          >
+            {new Intl.NumberFormat("en-NG", {
+              style: "currency",
+              currency: "NGN",
+              minimumFractionDigits: 0,
+            }).format(Number(itemAmount))}
+          </ItemAmount>
         </ItemNameAmountBox>
 
-        <ItemDescriptionBox>{itemDescription}</ItemDescriptionBox>
+        <ItemDescriptionBox title={itemDescription}>
+          {itemDescription}
+        </ItemDescriptionBox>
         <ItemRateBox>
           <Stack spacing={1} height={"fit-content"}>
             <Rating

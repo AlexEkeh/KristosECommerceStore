@@ -178,6 +178,7 @@ const SpecialOfferSection = () => {
                   ratingReadOnly={true}
                   itemName={item.name}
                   itemDescription={item.description}
+                  currency={item.currency}
                   itemAmount={item.amount}
                   checked={item.like}
                   isGridView
