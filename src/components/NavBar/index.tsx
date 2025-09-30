@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import { ListItem, NavBarContainer, NestedListItem } from "./style";
 import Badge from "@mui/material/Badge";
@@ -9,6 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Cart } from "../Cart";
 import { navCategoryLinks } from "@/utilities/navLink";
+import { useModalContext } from "@/ContextApi/modal";
 
 interface CartProps {
   cartContent: React.ReactNode;
@@ -16,9 +19,11 @@ interface CartProps {
 
 export const NavBar = ({ cartContent }: CartProps) => {
   const pathname = usePathname();
+  const { openModal } = useModalContext();
 
   const [isDropDown, setisDropDown] = useState(false);
   const dropDownRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false); // Modal state
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -97,10 +102,16 @@ export const NavBar = ({ cartContent }: CartProps) => {
           Profile
         </Link>
       </ListItem>
-      <ListItem sx={{ gap: "8px" }}>
+      <ListItem
+        sx={{ gap: "8px" }}
+        onClick={(e) => {
+          e.preventDefault();
+          openModal();
+        }}
+      >
         <Link
           className="link"
-          href={"/home/cart"}
+          href={""}
           scroll
           style={{
             color: pathname === "/home/cart" ? "black" : "inherit",
