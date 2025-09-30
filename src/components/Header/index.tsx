@@ -18,10 +18,12 @@ import { Cart } from "../Cart";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavMenu } from "../NavMenu";
+import { useModalContext } from "@/ContextApi/modal";
 // import { style } from "framer-motion/client";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { openModal } = useModalContext();
 
   const pathname = usePathname();
 
@@ -67,10 +69,14 @@ const Header = () => {
           <CartWrapper>
             <Link
               className="link"
-              href={"/home/cart"}
+              href={""}
               scroll
               style={{
                 color: pathname === "/home/cart" ? "black" : "inherit",
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                openModal();
               }}
             >
               <Cart cartContent={2} fontSize="medium" />
