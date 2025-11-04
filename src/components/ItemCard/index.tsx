@@ -19,6 +19,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
+import { useModalContext } from "@/ContextApi/modal";
 
 interface ItemCardProps {
   imageSrc: string | "GasCooker.svg";
@@ -59,6 +60,8 @@ export const ItemCard = ({
   onRatingChange,
   isGridView,
 }: ItemCardProps) => {
+  const { openModal } = useModalContext();
+
   return (
     <ItemCardContainer
       className="item-card-container"
@@ -173,6 +176,10 @@ export const ItemCard = ({
           <AddToCartButton
             id="add-to-cart-button"
             className="add-to-cart-button"
+            onClick={(e) => {
+              e.preventDefault();
+              openModal();
+            }}
           >
             Add to Cart
           </AddToCartButton>
