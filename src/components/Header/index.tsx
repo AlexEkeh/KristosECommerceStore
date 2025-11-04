@@ -18,12 +18,10 @@ import { Cart } from "../Cart";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavMenu } from "../NavMenu";
-import { useModalContext } from "@/ContextApi/modal";
 // import { style } from "framer-motion/client";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { openModal } = useModalContext();
 
   const pathname = usePathname();
 
@@ -76,6 +74,7 @@ const Header = () => {
               style={{
                 color: pathname === "/home/cart" ? "black" : "inherit",
               }}
+              onClick={isOpen === true ? handleMenuToggle : undefined}
             >
               <Cart cartContent={2} fontSize="medium" />
             </Link>
