@@ -3,7 +3,7 @@
 import React, { ReactNode, useEffect } from "react";
 import { Box, Modal } from "@mui/material";
 import { useModalContext } from "@/ContextApi/modal";
-import { ContententBox } from "./style";
+import { ContentBox } from "./style";
 
 export type ModalProps = {
   open: boolean;
@@ -41,7 +41,7 @@ export const ModalComponent = ({
         justifyContent: "center",
       }}
     >
-      <ContententBox
+      <ContentBox
         sx={{
           boxShadow: 24,
           bgcolor: "background.paper",
@@ -49,7 +49,7 @@ export const ModalComponent = ({
         }}
       >
         {children}
-      </ContententBox>
+      </ContentBox>
     </Modal>
   );
 };

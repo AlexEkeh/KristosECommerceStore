@@ -4,18 +4,13 @@ import Box from "@mui/material/Box";
 
 export const ItemContainer = styled(Box)({
   position: "relative",
-  border: "2px solid black",
+  border: "1px solid red",
   width: "100%",
-  minWidth: "600px",
+  minWidth: "100%",
   height: "fit-content",
-  minHeight: "500px",
+  minHeight: "200px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "500px 20px",
-  "@media (max-width: 600px)": {
-    minWidth: "100%",
-    width: "100%",
-    height: "100%",
-  },
+  padding: "20px",
 });
