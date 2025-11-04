@@ -63,25 +63,24 @@ const Header = () => {
             </Link>
             <Search />
           </Left>
+
           <NavBarWrapper>
             <NavBar cartContent={2} />
           </NavBarWrapper>
+
           <CartWrapper>
             <Link
               className="link"
-              href={""}
+              href={"/home/cart"}
               scroll
               style={{
                 color: pathname === "/home/cart" ? "black" : "inherit",
-              }}
-              onClick={(e) => {
-                e.preventDefault();
-                openModal();
               }}
             >
               <Cart cartContent={2} fontSize="medium" />
             </Link>
           </CartWrapper>
+
           <HamburgerWrapper width={"fit-content"}>
             <Hamburger
               toggled={isOpen}

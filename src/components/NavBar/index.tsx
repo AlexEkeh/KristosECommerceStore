@@ -78,6 +78,7 @@ export const NavBar = ({ cartContent }: CartProps) => {
           </NestedListItem>
         )}
       </ListItem>
+
       <ListItem>
         <Link
           className="link"
@@ -89,6 +90,7 @@ export const NavBar = ({ cartContent }: CartProps) => {
           Order Tracking
         </Link>
       </ListItem>
+
       <ListItem>
         <Link
           className="link"
@@ -102,23 +104,18 @@ export const NavBar = ({ cartContent }: CartProps) => {
           Profile
         </Link>
       </ListItem>
-      <ListItem
-        sx={{ gap: "8px" }}
-        onClick={(e) => {
-          e.preventDefault();
-          openModal();
-        }}
-      >
+
+      <ListItem sx={{ gap: "8px" }}>
         <Link
           className="link"
-          href={""}
+          href={"/home/cart"}
           scroll
           style={{
             color: pathname === "/home/cart" ? "black" : "inherit",
           }}
         >
           <Cart cartContent={cartContent} fontSize={"small"} />
-          My Cart{" "}
+          My Cart
         </Link>
       </ListItem>
     </NavBarContainer>
